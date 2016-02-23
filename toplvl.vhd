@@ -138,6 +138,9 @@ begin
 			addrb => addr_out,
 			doutb => color_out
 		);
+	
+		wr_l <= '1';
+		siwua <= '1';
 			
 
 end Behavioral;

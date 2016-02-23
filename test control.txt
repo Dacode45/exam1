@@ -1,0 +1,37 @@
+ restart
+ isim force add /control/clk 1 -radix bin -value 0 -radix bin -time 20 ns -repeat 40 ns
+ isim force add /control/clk 1 -radix bin -value 0 -radix bin -time 20 ns -repeat 40 ns
+ isim force add /control/rxf_l 1 -radix bin
+ isim force add /control/rxf_l 1 -radix bin
+ isim force add /control/rxf_l 1 -radix bin
+ isim force add /control/d_in 10101010 -radix bin
+ isim force add /control/d_in 10101010 -radix bin
+ run 40 ns
+ run 40 ns
+ isim force add /control/rxf_l 0 -radix bin
+ isim force add /control/rxf_l 0 -radix bin
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ isim force add /control/d_in 11111111 -radix bin
+ isim force add /control/d_in 11111111 -radix bin
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ run 40 ns
+ isim force add /control/rxf_l 1 -radix bin
+ isim force add /control/rxf_l 1 -radix bin
+ run 40 ns
+ run 40 ns

@@ -1,0 +1,4 @@
+vhdl isim_temp "ipcore_dir/my2port.vhd"
+vhdl isim_temp "vga.vhd"
+vhdl isim_temp "control.vhd"
+vhdl isim_temp "toplvl.vhd"
