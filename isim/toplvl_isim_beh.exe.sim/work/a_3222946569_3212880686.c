@@ -632,7 +632,7 @@ LAB17:    t25 = (t0 + 5000);
     t27 = *((char **)t26);
     t28 = (t27 + 40U);
     t29 = *((char **)t28);
-    *((unsigned char *)t29) = (unsigned char)2;
+    *((unsigned char *)t29) = (unsigned char)3;
     xsi_driver_first_trans_fast_port(t25);
 
 LAB2:    t30 = (t0 + 4720);

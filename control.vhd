@@ -145,7 +145,7 @@ begin
 	-- s5: (oe_l, rd_l, en_lower, en_upper, addr_counter++) Read next bit, increment addr_counter
 	-- s6: (oe_l, rd_l, en_lower, en_upper, addr, wre)
 	-- s7: () Out of memory state. loop while rxf is still low. 
-	oe_l <= '0' when (state = s1 or state = s2 or state = s3 or state = s5 or state = s6) else '0';
+	oe_l <= '0' when (state = s1 or state = s2 or state = s3 or state = s5 or state = s6) else '1';
 	rd_l <= '0' when (state = s2 or state = s3 or state = s5 or state = s6) else '1';
 	
 	en_lower <= '1' when (state = s1 or state = s2 or state = s3 or state = s5 or state = s6) else '0';

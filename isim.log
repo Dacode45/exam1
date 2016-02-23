@@ -21,69 +21,37 @@ Finished circuit initialization process.
 # isim force add /toplvl/rxf_l 0 -radix bin
 # isim force add /toplvl/data 10101010 -radix bin
 # isim force add /toplvl/data 10101010 -radix bin
-# run 100 ns
+# run 1.00us
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 40 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-# run all
-at 24015850 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 24015900 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 24041450 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 24041500 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 24067050 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 24067100 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 45455850 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 45455900 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 45481450 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 45481500 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 45507050 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 45507100 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 65935850 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 65935900 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 65961450 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 65961500 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 65987050 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 65987100 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 87375850 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 87375900 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 87401450 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 87401500 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 87427050 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 87427100 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 107855850 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 107855900 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 107881450 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 107881500 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 107907050 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 107907100 ns(1), Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-Stopped at time : 114704600 ns : File "C:/vhdl_stuff/exam1/vga.vhd" Line 112
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00ms
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /toplvl/controlModule/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+# restart
+# source test1
+# source test1.log
+# source test1
+# source test1.log
+# source test1.log
+# source test1.log
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 40 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
+# run 1.00ms
+# run 1.00ms
+# run 1.00ms
+# run 1.00ms
+# run 1.00ms
+# run 1.00ms

@@ -1,0 +1,9 @@
+NET "d_clk" TNM_NET = "d_clk";
+TIMESPEC TS_1 = PERIOD "clk" 16.67 ns HIGH 50 %;
+
+OFFSET = OUT 5.667 ns AFTER "d_clk";
+
+OFFSET = IN 9 ns VALID 9.5 ns BEFORE "d_clk";
+
+NET "v_clk" TNM_NET = "v_clk";
+TIMESPEC TS_2 = PERIOD "vgaclk" 40.0 ns HIGH 50 %;

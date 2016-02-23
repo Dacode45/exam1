@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/vhdl_stuff/exam1/control_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="control" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/control/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/rxf_l" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxf_l</obj_property>
+      <obj_property name="ObjectShortName">rxf_l</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/txe_l" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txe_l</obj_property>
+      <obj_property name="ObjectShortName">txe_l</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/oe_l" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">oe_l</obj_property>
+      <obj_property name="ObjectShortName">oe_l</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/rd_l" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_l</obj_property>
+      <obj_property name="ObjectShortName">rd_l</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/en_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">en_mem[0:0]</obj_property>
+      <obj_property name="ObjectShortName">en_mem[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/d_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">d_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/reset_ext" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset_ext</obj_property>
+      <obj_property name="ObjectShortName">reset_ext</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/d_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_out[8:0]</obj_property>
+      <obj_property name="ObjectShortName">d_out[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/nxt_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">nxt_state</obj_property>
+      <obj_property name="ObjectShortName">nxt_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/en_lower" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_lower</obj_property>
+      <obj_property name="ObjectShortName">en_lower</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/d_lower" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_lower[7:0]</obj_property>
+      <obj_property name="ObjectShortName">d_lower[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/en_upper" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_upper</obj_property>
+      <obj_property name="ObjectShortName">en_upper</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/d_upper" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_upper[7:0]</obj_property>
+      <obj_property name="ObjectShortName">d_upper[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/concat" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">concat[15:0]</obj_property>
+      <obj_property name="ObjectShortName">concat[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/crap" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">crap</obj_property>
+      <obj_property name="ObjectShortName">crap</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control/addr_counter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_counter[15:0]</obj_property>
+   </wvobject>
+</wave_config>

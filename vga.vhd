@@ -113,9 +113,9 @@ begin
 			end if;
 			
 			if x"0" <= v_counter and v_counter < 2 then
-				tmp_h_sync <= '0';
+				tmp_v_sync <= '0';
 			else
-				tmp_h_sync <= '1';
+				tmp_v_sync <= '1';
 			end if;
 		end if;
 	END PROCESS sync;

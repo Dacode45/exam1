@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/vhdl_stuff/exam1/toplvl_isim_beh.exe -prj C:/vhdl_stuff/exam1/toplvl_beh.prj work.toplvl 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/vhdl_stuff/exam1/toplvl_isim_beh.exe" -prj "C:/vhdl_stuff/exam1/toplvl_beh.prj" "work.toplvl" 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -9,8 +9,8 @@ Parsing VHDL file "C:/vhdl_stuff/exam1/control.vhd" into library work
 Parsing VHDL file "C:/vhdl_stuff/exam1/toplvl.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 160648 KB
-Fuse CPU Usage: 593 ms
+Fuse Memory Usage: 160696 KB
+Fuse CPU Usage: 358 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -31,5 +31,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 8 sub-compilation(s) to finish...
 Compiled 24 VHDL Units
 Built simulation executable C:/vhdl_stuff/exam1/toplvl_isim_beh.exe
-Fuse Memory Usage: 187864 KB
-Fuse CPU Usage: 1358 ms
+Fuse Memory Usage: 184736 KB
+Fuse CPU Usage: 1140 ms
