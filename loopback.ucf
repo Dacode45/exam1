@@ -1,0 +1,78 @@
+NET "clk" LOC = D10;
+NET "d[0]" LOC = D14;
+NET "d[1]" LOC = C14;
+NET "d[2]" LOC = B14;
+NET "d[3]" LOC = A14;
+NET "d[4]" LOC = A13;
+NET "d[5]" LOC = B13;
+NET "d[6]" LOC = E12;
+NET "d[7]" LOC = F12;
+NET "oe_l" LOC = F9;
+NET "rd_l" LOC = C11;
+NET "reset_h" LOC = K17;
+NET "rxf_l" LOC = F11;
+NET "siwua" LOC = E9;
+NET "txe_l" LOC = E11;
+NET "wr_l" LOC = D11;
+
+#Created by Constraints Editor (xc3s500e-fg320-4) - 2011/02/04
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_1 = PERIOD "clk" 16.67 ns HIGH 50 %;
+#Created by Constraints Editor (xc3s500e-fg320-4) - 2011/02/07
+
+OFFSET = OUT 5.667 ns AFTER "clk";
+
+INST "d[0]" TNM = "myinputs";
+INST "d[1]" TNM = "myinputs";
+INST "d[2]" TNM = "myinputs";
+INST "d[3]" TNM = "myinputs";
+INST "d[4]" TNM = "myinputs";
+INST "d[5]" TNM = "myinputs";
+INST "d[6]" TNM = "myinputs";
+INST "d[7]" TNM = "myinputs";
+INST "reset_h" TNM = "myinputs";
+INST "rxf_l" TNM = "myinputs";
+INST "txe_l" TNM = "myinputs";
+
+TIMEGRP "myinputs" OFFSET = IN 9 ns VALID 9.5 ns BEFORE "clk";
+
+NET "clk" IOSTANDARD = LVTTL;
+NET "d[0]" IOSTANDARD = LVTTL;
+NET "d[1]" IOSTANDARD = LVTTL;
+NET "d[2]" IOSTANDARD = LVTTL;
+NET "d[3]" IOSTANDARD = LVTTL;
+NET "d[4]" IOSTANDARD = LVTTL;
+NET "d[5]" IOSTANDARD = LVTTL;
+NET "d[6]" IOSTANDARD = LVTTL;
+NET "d[7]" IOSTANDARD = LVTTL;
+NET "oe_l" IOSTANDARD = LVTTL;
+NET "rd_l" IOSTANDARD = LVTTL;
+NET "reset_h" IOSTANDARD = LVTTL;
+NET "rxf_l" IOSTANDARD = LVTTL;
+NET "siwua" IOSTANDARD = LVTTL;
+NET "txe_l" IOSTANDARD = LVTTL;
+NET "wr_l" IOSTANDARD = LVTTL;
+NET "d[0]" SLEW = FAST;
+NET "d[1]" SLEW = FAST;
+NET "d[2]" SLEW = FAST;
+NET "d[3]" SLEW = FAST;
+NET "d[4]" SLEW = FAST;
+NET "d[5]" SLEW = FAST;
+NET "d[6]" SLEW = FAST;
+NET "d[7]" SLEW = FAST;
+NET "oe_l" SLEW = FAST;
+NET "rd_l" SLEW = FAST;
+NET "siwua" SLEW = FAST;
+NET "wr_l" SLEW = FAST;
+
+NET "reset_h" PULLDOWN;
+
+NET "vgaclk" LOC = B8  | IOSTANDARD = LVTTL;
+NET "r"      LOC = H14 | IOSTANDARD = LVTTL | SLEW = FAST | DRIVE = 8;
+NET "g"      LOC = H15 | IOSTANDARD = LVTTL | SLEW = FAST | DRIVE = 8;
+NET "b"      LOC = G15 | IOSTANDARD = LVTTL | SLEW = FAST | DRIVE = 8;
+NET "hs"     LOC = F15 | IOSTANDARD = LVTTL | SLEW = FAST | DRIVE = 8;
+NET "vs"     LOC = F14 | IOSTANDARD = LVTTL | SLEW = FAST | DRIVE = 8;
+
+NET "vgaclk" TNM_NET = "vgaclk";
+TIMESPEC TS_2 = PERIOD "vgaclk" 40.0 ns HIGH 50 %;

@@ -15,7 +15,7 @@ entity control is
 		oe_l : OUT STD_LOGIC;
 		rd_l : OUT STD_LOGIC;
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
-		en_mem : OUT STD_LOGIC;
+		en_mem : OUT STD_LOGIC_VECTOR(0 downto 0);
 		d_in : IN STD_LOGIC_VECTOR(7 downto 0);
 		reset_ext : IN STD_LOGIC;
 		d_out : OUT STD_LOGIC_VECTOR(8 downto 0)
@@ -23,7 +23,7 @@ entity control is
 end control;
 
 architecture Behavioral of control is
-	TYPE states IS (s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
+	TYPE states IS (s0, s1, s2, s3, s4, s5, s6, s7);
 	-- s0: ()WAIT State. Enter upon Reset of RXF going to 1. Move to next state when RXF = 0
 	-- s1: (oe_l, en_lower) PREP FOR DATA State. Enter when RXF is 0. 
 	-- s2: (oe_l, rd_l, en_lower, en_upper) Read Second Byte. 1 byte should be available
@@ -47,7 +47,7 @@ architecture Behavioral of control is
 	
 	SIGNAL crap : STD_LOGIC := '0';
 	--Register
-	SIGNAL addr_counter : STD_LOGIC_VECTOR(15 downto 0);
+	SIGNAL addr_counter : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 	
 begin
 
@@ -95,36 +95,45 @@ begin
 				
 	END PROCESS data_in;
 	
-	state_trans: PROCESS(reset, rxf_l, crap, addr_counter, state)
+	state_trans: PROCESS(reset_ext, rxf_l, crap, addr_counter, state)
 	BEGIN
-		nxt_state <= state;
-		CASE state IS
-			when s0 => if (rxf_l = '1') then
-								nxt_state <= s0;
-							else
-								nxt_state <= s1;
-							end if;
-			when s1 => nxt_state <= s2;
-			when s2 => nxt_state <= s3;
-			when s3 => if (crap = '1') then
-								nxt_state <= s4;
-							else
-								nxt_state <= s5;
-							end if;
-			when s4 => if (rxf_l = '0') then
-								nxt_state <= s4;
-							else 
-								nxt_state <= s0;
-							end if;
-			when s5 => nxt_state <= s6;
-			when s6 => if crap = '1' then
-								nxt_state <= s4;
-							elsif addr_counter = "65535" then
-								nxt_state <= s7;
-							else 
-								nxt_state <= s5;
-							end if;
-		END CASE;
+		if rxf_l = '1' then 
+			nxt_state <= s0;
+		else
+			nxt_state <= state;
+			CASE state IS
+				when s0 => if (rxf_l = '1') then
+									nxt_state <= s0;
+								else
+									nxt_state <= s1;
+								end if;
+				when s1 => nxt_state <= s2;
+				when s2 => nxt_state <= s3;
+				when s3 => if (crap = '1') then
+									nxt_state <= s4;
+								else
+									nxt_state <= s5;
+								end if;
+				when s4 => if (rxf_l = '0') then
+									nxt_state <= s4;
+								else 
+									nxt_state <= s0;
+								end if;
+				when s5 => nxt_state <= s6;
+				when s6 => if crap = '1' then
+									nxt_state <= s4;
+								elsif addr_counter = "1111111111111111" then
+									nxt_state <= s7;
+								else 
+									nxt_state <= s5;
+								end if;
+				when s7 => if (rxf_l = '0') then
+									nxt_state <= s7;
+								else
+									nxt_state <= s0;
+								end if;
+			END CASE;
+		end if;
 	END PROCESS state_trans;
 	
 	-- s0: ()WAIT State. Enter upon Reset of RXF going to 1. Move to next state when RXF = 0
@@ -144,7 +153,7 @@ begin
 
 	addr <= addr_counter;
 	
-	crap <= (d_upper & d_lower) and "1111111111111111";
+	crap <= '1' when not (d_upper & d_lower) = 0 else '0';
 	--Can't do for some reason d_out <= (d_upper & d_lower)(8 downto 0);
 	concat <= (d_upper & d_lower);
 	d_out <= concat(8 downto 0);

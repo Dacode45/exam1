@@ -1,12 +1,35 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/vhdl_stuff/exam1/control_isim_beh.exe -prj C:/vhdl_stuff/exam1/control_beh.prj work.control 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/vhdl_stuff/exam1/toplvl_isim_beh.exe -prj C:/vhdl_stuff/exam1/toplvl_beh.prj work.toplvl 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "C:/vhdl_stuff/exam1/ipcore_dir/my2port.vhd" into library work
+Parsing VHDL file "C:/vhdl_stuff/exam1/vga.vhd" into library work
 Parsing VHDL file "C:/vhdl_stuff/exam1/control.vhd" into library work
-ERROR:HDLCompiler:1731 - "C:/vhdl_stuff/exam1/control.vhd" Line 122: found '0' definitions of operator "=", cannot determine exact overloaded matching definition for "="
-ERROR:HDLCompiler:69 - "C:/vhdl_stuff/exam1/control.vhd" Line 98: <reset> is not declared.
-ERROR:HDLCompiler:1731 - "C:/vhdl_stuff/exam1/control.vhd" Line 147: found '0' definitions of operator "&", cannot determine exact overloaded matching definition for "&"
-ERROR:HDLCompiler:837 - "C:/vhdl_stuff/exam1/control.vhd" Line 147: Type std_ulogic does not match with a string literal
-ERROR:HDLCompiler:854 - "C:/vhdl_stuff/exam1/control.vhd" Line 25: Unit <behavioral> ignored due to previous errors.
-VHDL file C:/vhdl_stuff/exam1/control.vhd ignored due to errors
+Parsing VHDL file "C:/vhdl_stuff/exam1/toplvl.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 160648 KB
+Fuse CPU Usage: 593 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity control [control_default]
+Compiling architecture behavioral of entity vga [vga_default]
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture output_stage_behavioral of entity BLK_MEM_GEN_V7_3_output_stage [\BLK_MEM_GEN_V7_3_output_stage("...]
+Compiling architecture output_stage_behavioral of entity BLK_MEM_GEN_V7_3_output_stage [\BLK_MEM_GEN_V7_3_output_stage("...]
+Compiling architecture softecc_output_reg_stage_behavioral of entity BLK_MEM_GEN_V7_3_softecc_output_reg_stage [\BLK_MEM_GEN_V7_3_softecc_output...]
+Compiling architecture mem_module_behavioral of entity BLK_MEM_GEN_V7_3_mem_module [\BLK_MEM_GEN_V7_3_mem_module("bl...]
+Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3("blk_mem_gen_v...]
+Compiling architecture my2port_a of entity my2port [my2port_default]
+Compiling architecture behavioral of entity toplvl
+Time Resolution for simulation is 1ps.
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 24 VHDL Units
+Built simulation executable C:/vhdl_stuff/exam1/toplvl_isim_beh.exe
+Fuse Memory Usage: 187864 KB
+Fuse CPU Usage: 1358 ms

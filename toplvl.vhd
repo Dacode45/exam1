@@ -20,8 +20,6 @@ entity toplvl is
 		
 		h_sync : OUT STD_LOGIC;
 		v_sync : OUT STD_LOGIC;
-		mem_en : OUT STD_LOGIC;
-		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
 		r0 : OUT STD_LOGIC;
 		r1 : OUT STD_LOGIC;
 		r2 : OUT STD_LOGIC;
@@ -60,21 +58,20 @@ COMPONENT control
 		oe_l : OUT STD_LOGIC;
 		rd_l : OUT STD_LOGIC;
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
-		en_mem : OUT STD_LOGIC;
+		en_mem : OUT STD_LOGIC_VECTOR(0 downto 0);
 		d_in : IN STD_LOGIC_VECTOR(7 downto 0);
 		reset_ext : IN STD_LOGIC;
 		d_out : OUT STD_LOGIC_VECTOR(8 downto 0)
 	);
 end COMPONENT;
 
---VGA
+-- VGA
 COMPONENT vga is
 	PORT(
 		clk	: IN STD_LOGIC;
 		data : IN STD_LOGIC_VECTOR(8 downto 0);
 		h_sync : OUT STD_LOGIC;
 		v_sync : OUT STD_LOGIC;
-		mem_en : OUT STD_LOGIC;
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
 		r0 : OUT STD_LOGIC;
 		r1 : OUT STD_LOGIC;
@@ -88,11 +85,11 @@ COMPONENT vga is
 	);
 end COMPONENT;
 
---Wiring signals
-SIGNAL color_in : STD_LOGIC_VECTOR(7 downto 0);
-SIGNAL color_out : STD_LOGIC_VECTOR(7 downto 0);
+--Wiring  signals
+SIGNAL color_in : STD_LOGIC_VECTOR(8 downto 0);
+SIGNAL color_out : STD_LOGIC_VECTOR(8 downto 0);
 
-SIGNAL mem_en : STD_LOGIC;
+SIGNAL mem_en : STD_LOGIC_VECTOR(0 downto 0);
 
 SIGNAL addr_in : STD_LOGIC_VECTOR(15 downto 0);
 SIGNAL addr_out : STD_LOGIC_VECTOR(15 downto 0);
@@ -106,10 +103,11 @@ begin
 			txe_l => txe_l,
 			oe_l => oe_l,
 			rd_l => rd_l,
-			addr => addr,
 			en_mem => mem_en,
 			d_out => color_in,
 			addr => addr_in,
+			reset_ext => reset_h,
+			
 			d_in => data);
 	
 	vgaModule : vga
@@ -132,7 +130,7 @@ begin
 	memory : my2port
 		PORT MAP(
 			clka => d_clk,
-			wea => mem_en_in,
+			wea => mem_en,
 			addra => addr_in,
 			dina => color_in,
 			clkb => v_clk,

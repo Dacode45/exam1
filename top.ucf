@@ -1,0 +1,16 @@
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_1 = PERIOD "clk" 40.0 ns HIGH 50 %;
+
+OFFSET = OUT 8.667 ns AFTER "clk";
+
+#NET "reset_h" PULLDOWN;
+
+#Created by Constraints Editor (xc3s500e-fg320-4) - 2011/02/04
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_1 = PERIOD "clk" 16.67 ns HIGH 50 %;
+#Created by Constraints Editor (xc3s500e-fg320-4) - 2011/02/07
+
+OFFSET = OUT 5.667 ns AFTER "clk";
+
+NET "vgaclk" TNM_NET = "vgaclk";
+TIMESPEC TS_2 = PERIOD "vgaclk" 40.0 ns HIGH 50 %;

@@ -67,21 +67,21 @@ architecture Behavioral of vga is
 
 begin
 
-	--Handle register transfers.
+	--Handle  register transfers.
 	clkd : PROCESS (clk)
 	BEGIN
 		--Handle Counters
 		if (rising_edge(clk)) then
 			---799
 			if h_counter = x"31F" then
-				h_counter <= "0";
+				h_counter <= ( others => '0');
 			else
 				h_counter <= h_counter+1;
 			end if;
 			
 			--524
 			if v_counter = x"20C" then
-				v_counter <= "0";
+				v_counter <= ( others => '0');
 			elsif h_counter = x"31F" then
 				v_counter <= v_counter+1;
 			else
@@ -120,8 +120,9 @@ begin
 		end if;
 	END PROCESS sync;
 	
-	addr <= (v_counter + x"499") & (h_counter + x"864");
-	color_en <= ((x"A0" <= h_counter) and (h_counter < x"320") and (x"2E" <= v_counter) and (v_counter <= x"20D"));
+	addr <= (v_counter(7 downto 0) + (256-45)) & (h_counter(7 downto 0) + (256-159));
+	--enable this the clock tick before data comes out. h_counter = 159
+	color_en <= '1' WHEN ((159 <= h_counter) and (h_counter < 800) and (44 < v_counter) and (v_counter < 525)) else '0';
 	
 	h_sync <= tmp_h_sync;
 	v_sync <= tmp_v_sync;
