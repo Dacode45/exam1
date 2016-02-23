@@ -1,0 +1,12 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/vhdl_stuff/exam1/control_isim_beh.exe -prj C:/vhdl_stuff/exam1/control_beh.prj work.control 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/vhdl_stuff/exam1/control.vhd" into library work
+ERROR:HDLCompiler:1731 - "C:/vhdl_stuff/exam1/control.vhd" Line 122: found '0' definitions of operator "=", cannot determine exact overloaded matching definition for "="
+ERROR:HDLCompiler:69 - "C:/vhdl_stuff/exam1/control.vhd" Line 98: <reset> is not declared.
+ERROR:HDLCompiler:1731 - "C:/vhdl_stuff/exam1/control.vhd" Line 147: found '0' definitions of operator "&", cannot determine exact overloaded matching definition for "&"
+ERROR:HDLCompiler:837 - "C:/vhdl_stuff/exam1/control.vhd" Line 147: Type std_ulogic does not match with a string literal
+ERROR:HDLCompiler:854 - "C:/vhdl_stuff/exam1/control.vhd" Line 25: Unit <behavioral> ignored due to previous errors.
+VHDL file C:/vhdl_stuff/exam1/control.vhd ignored due to errors

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="exam1.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="vga_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1456182923" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1456182923">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1456193857" xil_pn:in_ck="5357472267567843344" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1456193857">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="control.vhd"/>
+      <outfile xil_pn:name="toplvl.vhd"/>
+      <outfile xil_pn:name="vga.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1456193829" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6347466652249991836" xil_pn:start_ts="1456193829">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1456193829" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="253478116232786402" xil_pn:start_ts="1456193829">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1456182924" xil_pn:in_ck="3981514497998754116" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="345042479889913041" xil_pn:start_ts="1456182923">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/my2port.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/my2port.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1456193857" xil_pn:in_ck="380616651181993900" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1456193857">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="control.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/my2port.vhd"/>
+      <outfile xil_pn:name="toplvl.vhd"/>
+      <outfile xil_pn:name="vga.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1456193859" xil_pn:in_ck="380616651181993900" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2467377205841593691" xil_pn:start_ts="1456193857">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:name="TRAN_SubProjectAbstractToPreProxy">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
+
+</generated_project>
