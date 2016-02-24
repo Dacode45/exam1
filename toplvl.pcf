@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Feb 23 10:02:48 2016
+// Written by: Map P.20131013 on Wed Feb 24 14:14:52 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -163,27 +163,30 @@ PIN
         = BEL
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram"
         PINNAME CLKA;
-TIMEGRP d_clk = BEL "controlModule/addr_counter_14" BEL
-        "controlModule/addr_counter_13" BEL "controlModule/addr_counter_15"
-        BEL "controlModule/addr_counter_11" BEL
-        "controlModule/addr_counter_10" BEL "controlModule/addr_counter_12"
-        BEL "controlModule/addr_counter_8" BEL "controlModule/addr_counter_7"
-        BEL "controlModule/addr_counter_9" BEL "controlModule/addr_counter_5"
-        BEL "controlModule/addr_counter_4" BEL "controlModule/addr_counter_6"
-        BEL "controlModule/addr_counter_2" BEL "controlModule/addr_counter_1"
-        BEL "controlModule/addr_counter_3" BEL "controlModule/addr_counter_0"
-        BEL "controlModule/state_FSM_FFd2" BEL "controlModule/state_FSM_FFd4"
-        BEL "controlModule/state_FSM_FFd5" BEL "controlModule/state_FSM_FFd3"
-        BEL "controlModule/state_FSM_FFd7" BEL "controlModule/state_FSM_FFd8"
-        BEL "controlModule/state_FSM_FFd6" BEL "controlModule/d_upper_7" BEL
-        "controlModule/d_upper_6" BEL "controlModule/d_upper_5" BEL
-        "controlModule/d_upper_4" BEL "controlModule/d_upper_3" BEL
-        "controlModule/d_upper_2" BEL "controlModule/d_upper_1" BEL
-        "controlModule/d_upper_0" BEL "controlModule/d_lower_7" BEL
-        "controlModule/d_lower_6" BEL "controlModule/d_lower_5" BEL
-        "controlModule/d_lower_4" BEL "controlModule/d_lower_3" BEL
-        "controlModule/d_lower_2" BEL "controlModule/d_lower_1" BEL
-        "controlModule/d_lower_0" BEL "d_clk_BUFGP/BUFG" PIN
+TIMEGRP d_clk = BEL "controlModule/addr_counter_15" BEL
+        "controlModule/addr_counter_14" BEL "controlModule/addr_counter_13"
+        BEL "controlModule/addr_counter_12" BEL
+        "controlModule/addr_counter_11" BEL "controlModule/addr_counter_10"
+        BEL "controlModule/addr_counter_9" BEL "controlModule/addr_counter_8"
+        BEL "controlModule/addr_counter_7" BEL "controlModule/addr_counter_6"
+        BEL "controlModule/addr_counter_5" BEL "controlModule/addr_counter_4"
+        BEL "controlModule/addr_counter_3" BEL "controlModule/addr_counter_2"
+        BEL "controlModule/addr_counter_1" BEL "controlModule/addr_counter_0"
+        BEL "controlModule/d_upper_7" BEL "controlModule/d_upper_6" BEL
+        "controlModule/d_upper_5" BEL "controlModule/d_upper_4" BEL
+        "controlModule/d_upper_3" BEL "controlModule/d_upper_2" BEL
+        "controlModule/d_upper_1" BEL "controlModule/d_upper_0" BEL
+        "controlModule/d_lower_7" BEL "controlModule/d_lower_6" BEL
+        "controlModule/d_lower_5" BEL "controlModule/d_lower_4" BEL
+        "controlModule/d_lower_3" BEL "controlModule/d_lower_2" BEL
+        "controlModule/d_lower_1" BEL "controlModule/d_lower_0" BEL
+        "controlModule/byte_counter" BEL "controlModule/state_FSM_FFd1" BEL
+        "controlModule/state_FSM_FFd3" BEL "controlModule/state_FSM_FFd7" BEL
+        "controlModule/state_FSM_FFd2" BEL "controlModule/state_FSM_FFd4" BEL
+        "controlModule/state_FSM_FFd5" BEL "controlModule/state_FSM_FFd8" BEL
+        "controlModule/state_FSM_FFd6" BEL "controlModule/state_FSM_FFd9" BEL
+        "controlModule/state_FSM_FFd10" BEL "controlModule/state_FSM_FFd11"
+        BEL "controlModule/state_FSM_FFd12" BEL "d_clk_BUFGP/BUFG" PIN
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>"
         PIN
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>"
@@ -417,10 +420,11 @@ TIMEGRP v_clk = BEL "vgaModule/v_counter_9" BEL "vgaModule/v_counter_8" BEL
         "vgaModule/h_counter_5" BEL "vgaModule/h_counter_4" BEL
         "vgaModule/h_counter_3" BEL "vgaModule/h_counter_2" BEL
         "vgaModule/h_counter_1" BEL "vgaModule/h_counter_0" BEL
-        "vgaModule/tmp_h_sync" BEL "vgaModule/rgb_8" BEL "vgaModule/rgb_7" BEL
-        "vgaModule/rgb_6" BEL "vgaModule/rgb_5" BEL "vgaModule/rgb_4" BEL
-        "vgaModule/rgb_3" BEL "vgaModule/rgb_2" BEL "vgaModule/rgb_1" BEL
-        "vgaModule/rgb_0" BEL "v_clk_BUFGP/BUFG" BEL
+        "vgaModule/tmp_v_sync" BEL "vgaModule/tmp_h_sync" BEL
+        "vgaModule/rgb_8" BEL "vgaModule/rgb_7" BEL "vgaModule/rgb_6" BEL
+        "vgaModule/rgb_5" BEL "vgaModule/rgb_4" BEL "vgaModule/rgb_3" BEL
+        "vgaModule/rgb_2" BEL "vgaModule/rgb_1" BEL "vgaModule/rgb_0" BEL
+        "v_clk_BUFGP/BUFG" BEL
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_0"
         BEL
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_1"

@@ -50,3 +50,11 @@
  run 40 ns
  run 40 ns
  run 40 ns
+
+isim force add {/control/d_in} 1010101 -radix bin 
+isim force add {/control/d_in} 1010101 -radix bin 
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns

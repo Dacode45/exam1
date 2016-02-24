@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.12 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: toplvl.prj
 
@@ -130,7 +130,6 @@ Elaborating entity <toplvl> (architecture <Behavioral>) from library <work>.
 Elaborating entity <control> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <vga> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "C:\vhdl_stuff\exam1\vga.vhd" Line 66: Using initial value '1' for tmp_v_sync since it is never assigned
 
 Elaborating entity <my2port> (architecture <my2port_a>) from library <work>.
 
@@ -147,29 +146,29 @@ Unit <toplvl> synthesized.
 Synthesizing Unit <control>.
     Related source file is "C:\vhdl_stuff\exam1\control.vhd".
 WARNING:Xst:647 - Input <txe_l> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <en_mem> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 16-bit register for signal <addr_counter>.
     Found 8-bit register for signal <d_lower>.
     Found 8-bit register for signal <d_upper>.
-    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <byte_counter>.
+    Found 4-bit register for signal <state>.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 8                                              |
-    | Transitions        | 19                                             |
+    | States             | 12                                             |
+    | Transitions        | 38                                             |
     | Inputs             | 3                                              |
-    | Outputs            | 6                                              |
+    | Outputs            | 11                                             |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | reset_ext (positive)                           |
+    | Reset              | reset_ext_crap_OR_1_o (positive)               |
     | Reset type         | synchronous                                    |
     | Reset State        | s0                                             |
     | Power Up State     | s0                                             |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <addr_counter[15]_GND_6_o_add_3_OUT> created at line 73.
+    Found 16-bit adder for signal <addr_counter[15]_GND_6_o_add_9_OUT> created at line 76.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  32 D-type flip-flop(s).
+	inferred  33 D-type flip-flop(s).
 	inferred   1 Finite State Machine(s).
 Unit <control> synthesized.
 
@@ -178,20 +177,22 @@ Synthesizing Unit <vga>.
     Found 10-bit register for signal <v_counter>.
     Found 9-bit register for signal <rgb>.
     Found 1-bit register for signal <tmp_h_sync>.
+    Found 1-bit register for signal <tmp_v_sync>.
     Found 10-bit register for signal <h_counter>.
     Found 10-bit adder for signal <h_counter[9]_GND_8_o_add_1_OUT> created at line 79.
     Found 10-bit adder for signal <v_counter[9]_GND_8_o_add_5_OUT> created at line 86.
     Found 8-bit adder for signal <addr<15:8>> created at line 123.
     Found 8-bit adder for signal <addr<7:0>> created at line 123.
+    Found 10-bit comparator lessequal for signal <h_counter[9]_GND_8_o_LessThan_13_o> created at line 109
     Found 10-bit comparator lessequal for signal <v_counter[9]_GND_8_o_LessThan_14_o> created at line 115
-    Found 10-bit comparator lessequal for signal <n0016> created at line 125
+    Found 10-bit comparator lessequal for signal <n0019> created at line 125
     Found 10-bit comparator greater for signal <h_counter[9]_PWR_8_o_LessThan_18_o> created at line 125
     Found 10-bit comparator greater for signal <GND_8_o_v_counter[9]_LessThan_19_o> created at line 125
     Found 10-bit comparator greater for signal <v_counter[9]_PWR_8_o_LessThan_20_o> created at line 125
     Summary:
 	inferred   4 Adder/Subtractor(s).
-	inferred  30 D-type flip-flop(s).
-	inferred   5 Comparator(s).
+	inferred  31 D-type flip-flop(s).
+	inferred   6 Comparator(s).
 Unit <vga> synthesized.
 
 =========================================================================
@@ -202,15 +203,15 @@ Macro Statistics
  10-bit adder                                          : 2
  16-bit adder                                          : 1
  8-bit adder                                           : 2
-# Registers                                            : 7
- 1-bit register                                        : 1
+# Registers                                            : 9
+ 1-bit register                                        : 3
  10-bit register                                       : 2
  16-bit register                                       : 1
  8-bit register                                        : 2
  9-bit register                                        : 1
-# Comparators                                          : 5
+# Comparators                                          : 6
  10-bit comparator greater                             : 3
- 10-bit comparator lessequal                           : 2
+ 10-bit comparator lessequal                           : 3
 # FSMs                                                 : 1
 
 =========================================================================
@@ -240,11 +241,11 @@ Macro Statistics
 # Counters                                             : 3
  10-bit up counter                                     : 2
  16-bit up counter                                     : 1
-# Registers                                            : 26
- Flip-Flops                                            : 26
-# Comparators                                          : 5
+# Registers                                            : 28
+ Flip-Flops                                            : 28
+# Comparators                                          : 6
  10-bit comparator greater                             : 3
- 10-bit comparator lessequal                           : 2
+ 10-bit comparator lessequal                           : 3
 # FSMs                                                 : 1
 
 =========================================================================
@@ -253,19 +254,23 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <controlModule/FSM_0> on signal <state[1:8]> with one-hot encoding.
--------------------
+Optimizing FSM <controlModule/FSM_0> on signal <state[1:12]> with one-hot encoding.
+-----------------------
  State | Encoding
--------------------
- s0    | 00000001
- s1    | 00000010
- s2    | 00000100
- s3    | 00001000
- s4    | 00100000
- s5    | 00010000
- s6    | 01000000
- s7    | 10000000
--------------------
+-----------------------
+ s0    | 000000000001
+ s1    | 000000000010
+ s2    | 000000000100
+ s3    | 000000010000
+ s4    | 000000100000
+ s5    | 000001000000
+ s6    | 000000001000
+ s7    | 000010000000
+ s8    | 000100000000
+ s9    | 001000000000
+ s10   | 010000000000
+ s11   | 100000000000
+-----------------------
 
 Optimizing unit <toplvl> ...
 
@@ -275,7 +280,7 @@ Optimizing unit <vga> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block toplvl, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block toplvl, actual ratio is 4.
 
 Final Macro Processing ...
 
@@ -283,8 +288,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 69
- Flip-Flops                                            : 69
+# Registers                                            : 76
+ Flip-Flops                                            : 76
 
 =========================================================================
 
@@ -307,32 +312,31 @@ Top Level Output File Name         : toplvl.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 315
+# BELS                             : 345
 #      GND                         : 2
 #      INV                         : 5
 #      LUT1                        : 33
-#      LUT2                        : 5
+#      LUT2                        : 6
 #      LUT3                        : 6
-#      LUT4                        : 5
-#      LUT5                        : 74
-#      LUT6                        : 105
+#      LUT4                        : 11
+#      LUT5                        : 94
+#      LUT6                        : 108
 #      MUXCY                       : 33
 #      MUXF7                       : 9
 #      VCC                         : 2
 #      XORCY                       : 36
-# FlipFlops/Latches                : 74
-#      FD                          : 1
-#      FDE                         : 21
-#      FDR                         : 25
-#      FDRE                        : 26
-#      FDS                         : 1
+# FlipFlops/Latches                : 81
+#      FD                          : 14
+#      FDE                         : 5
+#      FDR                         : 20
+#      FDRE                        : 42
 # RAMS                             : 32
 #      RAMB16BWER                  : 32
 # Clock Buffers                    : 2
 #      BUFGP                       : 2
-# IO Buffers                       : 23
+# IO Buffers                       : 25
 #      IBUF                        : 10
-#      OBUF                        : 13
+#      OBUF                        : 15
 
 Device utilization summary:
 ---------------------------
@@ -341,20 +345,20 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              74  out of  11440     0%  
- Number of Slice LUTs:                  233  out of   5720     4%  
-    Number used as Logic:               233  out of   5720     4%  
+ Number of Slice Registers:              81  out of  11440     0%  
+ Number of Slice LUTs:                  263  out of   5720     4%  
+    Number used as Logic:               263  out of   5720     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    259
-   Number with an unused Flip Flop:     185  out of    259    71%  
-   Number with an unused LUT:            26  out of    259    10%  
-   Number of fully used LUT-FF pairs:    48  out of    259    18%  
+ Number of LUT Flip Flop pairs used:    286
+   Number with an unused Flip Flop:     205  out of    286    71%  
+   Number with an unused LUT:            23  out of    286     8%  
+   Number of fully used LUT-FF pairs:    58  out of    286    20%  
    Number of unique control sets:        10
 
 IO Utilization: 
  Number of IOs:                          28
- Number of bonded IOBs:                  25  out of    102    24%  
+ Number of bonded IOBs:                  27  out of    102    26%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               32  out of     32   100%  
@@ -382,8 +386,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-d_clk                              | BUFGP                  | 71    |
-v_clk                              | BUFGP                  | 67    |
+d_clk                              | BUFGP                  | 77    |
+v_clk                              | BUFGP                  | 68    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -395,8 +399,8 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 6.251ns (Maximum Frequency: 159.981MHz)
-   Minimum input arrival time before clock: 4.809ns
-   Maximum output required time after clock: 5.786ns
+   Minimum input arrival time before clock: 3.832ns
+   Maximum output required time after clock: 6.088ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -405,32 +409,31 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'd_clk'
-  Clock period: 4.840ns (frequency: 206.622MHz)
-  Total number of paths / destination ports: 1113 / 750
+  Clock period: 5.635ns (frequency: 177.474MHz)
+  Total number of paths / destination ports: 2367 / 902
 -------------------------------------------------------------------------
-Delay:               4.840ns (Levels of Logic = 3)
-  Source:            controlModule/d_upper_0 (FF)
-  Destination:       controlModule/state_FSM_FFd4 (FF)
+Delay:               5.635ns (Levels of Logic = 2)
+  Source:            controlModule/d_lower_2 (FF)
+  Destination:       controlModule/d_upper_7 (FF)
   Source Clock:      d_clk rising
   Destination Clock: d_clk rising
 
-  Data Path: controlModule/d_upper_0 to controlModule/state_FSM_FFd4
+  Data Path: controlModule/d_lower_2 to controlModule/d_upper_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             33   0.525   1.967  controlModule/d_upper_0 (controlModule/d_upper_0)
-     LUT6:I1->O            1   0.254   0.682  controlModule/_n0100<0>2 (controlModule/_n0100<0>1)
-     LUT6:I5->O            2   0.254   0.834  controlModule/_n0100<0>3 (controlModule/_n0100)
-     LUT5:I3->O            1   0.250   0.000  controlModule/state_FSM_FFd4-In4 (controlModule/state_FSM_FFd4-In)
-     FDR:D                     0.074          controlModule/state_FSM_FFd4
+     FDRE:C->Q            34   0.525   2.008  controlModule/d_lower_2 (controlModule/d_lower_2)
+     LUT6:I0->O            1   0.254   0.682  controlModule/en_upper11 (controlModule/en_upper11)
+     LUT6:I5->O           28   0.254   1.452  controlModule/en_upper13 (controlModule/en_upper1)
+     FDRE:R                    0.459          controlModule/d_lower_0
     ----------------------------------------
-    Total                      4.840ns (1.357ns logic, 3.483ns route)
-                                       (28.0% logic, 72.0% route)
+    Total                      5.635ns (1.492ns logic, 4.143ns route)
+                                       (26.5% logic, 73.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'v_clk'
   Clock period: 6.251ns (frequency: 159.981MHz)
-  Total number of paths / destination ports: 3545 / 458
+  Total number of paths / destination ports: 3550 / 459
 -------------------------------------------------------------------------
 Delay:               6.251ns (Levels of Logic = 4)
   Source:            vgaModule/v_counter_4 (FF)
@@ -454,29 +457,29 @@ Delay:               6.251ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'd_clk'
-  Total number of paths / destination ports: 38 / 33
+  Total number of paths / destination ports: 31 / 20
 -------------------------------------------------------------------------
-Offset:              4.809ns (Levels of Logic = 2)
+Offset:              3.832ns (Levels of Logic = 2)
   Source:            reset_h (PAD)
-  Destination:       controlModule/addr_counter_14 (FF)
+  Destination:       controlModule/state_FSM_FFd1 (FF)
   Destination Clock: d_clk rising
 
-  Data Path: reset_h to controlModule/addr_counter_14
+  Data Path: reset_h to controlModule/state_FSM_FFd1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            36   1.328   1.587  reset_h_IBUF (reset_h_IBUF)
-     LUT3:I2->O           16   0.254   1.181  controlModule/Mcount_addr_counter_val1 (controlModule/Mcount_addr_counter_val)
-     FDRE:R                    0.459          controlModule/addr_counter_0
+     IBUF:I->O            44   1.328   2.176  reset_h_IBUF (reset_h_IBUF)
+     LUT6:I0->O            1   0.254   0.000  controlModule/state_FSM_FFd9_rstpot (controlModule/state_FSM_FFd9_rstpot)
+     FD:D                      0.074          controlModule/state_FSM_FFd9
     ----------------------------------------
-    Total                      4.809ns (2.041ns logic, 2.768ns route)
-                                       (42.4% logic, 57.6% route)
+    Total                      3.832ns (1.656ns logic, 2.176ns route)
+                                       (43.2% logic, 56.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'v_clk'
   Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              3.029ns (Levels of Logic = 2)
+Offset:              3.163ns (Levels of Logic = 2)
   Source:            reset_h (PAD)
   Destination:       memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram (RAM)
   Destination Clock: v_clk rising
@@ -485,36 +488,36 @@ Offset:              3.029ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            36   1.328   1.586  reset_h_IBUF (reset_h_IBUF)
+     IBUF:I->O            44   1.328   1.720  reset_h_IBUF (reset_h_IBUF)
      begin scope: 'memory:rstb'
      RAMB16BWER:RSTB           0.115          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
     ----------------------------------------
-    Total                      3.029ns (1.443ns logic, 1.586ns route)
-                                       (47.6% logic, 52.4% route)
+    Total                      3.163ns (1.443ns logic, 1.720ns route)
+                                       (45.6% logic, 54.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'd_clk'
-  Total number of paths / destination ports: 4 / 1
+  Total number of paths / destination ports: 8 / 2
 -------------------------------------------------------------------------
-Offset:              5.786ns (Levels of Logic = 2)
-  Source:            controlModule/state_FSM_FFd4 (FF)
+Offset:              6.088ns (Levels of Logic = 2)
+  Source:            controlModule/state_FSM_FFd12 (FF)
   Destination:       rd_l (PAD)
   Source Clock:      d_clk rising
 
-  Data Path: controlModule/state_FSM_FFd4 to rd_l
+  Data Path: controlModule/state_FSM_FFd12 to rd_l
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             21   0.525   1.418  controlModule/state_FSM_FFd4 (controlModule/state_FSM_FFd4)
-     LUT4:I2->O            1   0.250   0.681  controlModule/rd_l1 (rd_l_OBUF)
+     FD:C->Q              20   0.525   1.716  controlModule/state_FSM_FFd12 (controlModule/state_FSM_FFd12)
+     LUT5:I0->O            1   0.254   0.681  controlModule/state_rd_l1 (rd_l_OBUF)
      OBUF:I->O                 2.912          rd_l_OBUF (rd_l)
     ----------------------------------------
-    Total                      5.786ns (3.687ns logic, 2.099ns route)
-                                       (63.7% logic, 36.3% route)
+    Total                      6.088ns (3.691ns logic, 2.397ns route)
+                                       (60.6% logic, 39.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'v_clk'
-  Total number of paths / destination ports: 10 / 10
+  Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
 Offset:              4.118ns (Levels of Logic = 1)
   Source:            vgaModule/tmp_h_sync (FF)
@@ -541,7 +544,7 @@ Clock to Setup on destination clock d_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-d_clk          |    4.840|         |         |         |
+d_clk          |    5.635|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock v_clk
@@ -556,13 +559,13 @@ v_clk          |    6.251|         |         |         |
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.49 secs
+Total CPU time to Xst completion: 7.65 secs
  
 --> 
 
-Total memory usage is 247080 kilobytes
+Total memory usage is 247592 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

@@ -9,8 +9,8 @@ Parsing VHDL file "C:/vhdl_stuff/exam1/control.vhd" into library work
 Parsing VHDL file "C:/vhdl_stuff/exam1/toplvl.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 160648 KB
-Fuse CPU Usage: 577 ms
+Fuse Memory Usage: 160632 KB
+Fuse CPU Usage: 343 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -28,8 +28,8 @@ Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3(
 Compiling architecture my2port_a of entity my2port [my2port_default]
 Compiling architecture behavioral of entity toplvl
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
+Waiting for 8 sub-compilation(s) to finish...
 Compiled 24 VHDL Units
 Built simulation executable C:/vhdl_stuff/exam1/toplvl_isim_beh.exe
-Fuse Memory Usage: 187864 KB
-Fuse CPU Usage: 1359 ms
+Fuse Memory Usage: 187848 KB
+Fuse CPU Usage: 1077 ms
