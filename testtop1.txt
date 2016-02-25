@@ -3,8 +3,6 @@
  isim force add /toplvl/d_clk 1 -radix bin -value 0 -radix bin -time 20 ns -repeat 40 ns
  isim force add /toplvl/v_clk 1 -radix bin -value 0 -radix bin -time 50 ns -repeat 100 ns
  isim force add /toplvl/v_clk 1 -radix bin -value 0 -radix bin -time 50 ns -repeat 100 ns
- isim force add /toplvl/data 111 -radix bin
- isim force add /toplvl/data 111 -radix bin
  isim force add /toplvl/rxf_l 1 -radix bin
  isim force add /toplvl/rxf_l 1 -radix bin
  run 40 ns
@@ -13,6 +11,8 @@
  isim force add /toplvl/rxf_l 0 -radix bin
  run 40 ns
  run 40 ns
+ isim force add /toplvl/data 111 -radix bin
+ isim force add /toplvl/data 111 -radix bin
  run 40 ns
  isim force add /toplvl/rxf_l 1 -radix bin
  isim force add /toplvl/rxf_l 1 -radix bin

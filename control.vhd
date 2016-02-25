@@ -144,8 +144,8 @@ begin
 	oe_l <= '0' when ( state = s2 or state = s3 or state=s4 or state = s5 or state = s6 or state = s7 or state = s8 or state = s9 or state = s10) else '1';
 	rd_l <= '0' when ( state = s3 or state = s4 or state = s5 or state = s7 or state = s8 or state = s9 or state = s10) else '1';
 	
-	en_lower <= '1' when ( state = s2 or state = s4 or state = s5 or state = s6 or state = s8 or state = s9 or state = s10 ) else '0';
-	en_upper <= '1' when (state = s4 or state = s6 or state = s9 ) else '0';
+	en_lower <= '1' when ( state = s3 or state = s4 or state = s5 or state = s7 or state = s8 or state = s9 or state = s10 ) else '0';
+	en_upper <= '1' when (state = s4 or state = s7 or state = s9 ) else '0';
 
 	
 	en_mem <= (others => '1') when (state = s5 or state = s7 or state = s10 or state = s11) else (others => '0');
@@ -153,7 +153,7 @@ begin
 	
 	mem_set <= '1' when (state = s4 or state = s9 or state = s6) else '0';
 	mem_full <= '1' when (addr_counter = 65535 ) else '0';
-	nxt_byte_counter <= '0' when (state = s0 or state = s4 or state = s9 or state = s6) else '1' when(state = s2 or state = s5 or state = s10 or state = s8) else byte_counter;
+	nxt_byte_counter <= '0' when (state = s0 or state = s4 or state = s9 ) else '1' when(state = s2 or state = s5 or state = s6 or state = s10  or state = s8) else byte_counter;
 	crap <= '1' when not (d_upper & d_lower) = 0 else '0';
 	--Can't do for some reason d_out <= (d_upper & d_lower)(8 downto 0);
 	concat <= (d_upper & d_lower);
