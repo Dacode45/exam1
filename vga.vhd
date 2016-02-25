@@ -122,7 +122,7 @@ begin
 	
 	addr <= (v_counter(7 downto 0) + (256-45)) & (h_counter(7 downto 0) + (256-159));
 	--enable this the clock tick before data comes out. h_counter = 159
-	color_en <= '1' WHEN ((159 <= h_counter) and (h_counter < 800) and (44 < v_counter) and (v_counter < 525)) else '0';
+	color_en <= '1' WHEN ((159 <= h_counter) and (h_counter < 415) and (44 < v_counter) and (v_counter < 300)) else '0';
 	
 	h_sync <= tmp_h_sync;
 	v_sync <= tmp_v_sync;

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-02-25T12:12:14</DateModified>
+  <DateModified>2016-02-25T15:29:45</DateModified>
   <ModuleName>toplvl</ModuleName>
-  <SummaryTimeStamp>2016-02-23T10:03:02</SummaryTimeStamp>
+  <SummaryTimeStamp>2016-02-25T15:28:24</SummaryTimeStamp>
   <SavedFilePath>C:/vhdl_stuff/exam1/iseconfig/toplvl.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/vhdl_stuff/exam1\</ImplementationReportsDirectory>
   <DateInitialized>2016-02-22T20:31:26</DateInitialized>

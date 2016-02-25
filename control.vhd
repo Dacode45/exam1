@@ -148,10 +148,10 @@ begin
 	en_upper <= '1' when (state = s4 or state = s7 or state = s9 ) else '0';
 
 	
-	en_mem <= (others => '1') when (state = s5 or state = s7 or state = s10 or state = s11) else (others => '0');
+	en_mem <= (others => '1') when ((state = s5 or state = s7 or state = s10 or state = s11)and (mem_full = '0')) else (others => '0');
 	addr <= addr_counter;
 	
-	mem_set <= '1' when (state = s4 or state = s9 or state = s6) else '0';
+	mem_set <= '1' when ((state = s4 or state = s9 or state = s6)) else '0';
 	mem_full <= '1' when (addr_counter = 65535 ) else '0';
 	nxt_byte_counter <= '0' when (state = s0 or state = s4 or state = s9 ) else '1' when(state = s2 or state = s5 or state = s6 or state = s10  or state = s8) else byte_counter;
 	crap <= '1' when not (d_upper & d_lower) = 0 else '0';

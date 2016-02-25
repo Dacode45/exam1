@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Feb 24 14:14:52 2016
+// Written by: Map P.20131013 on Thu Feb 25 15:28:05 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -180,13 +180,13 @@ TIMEGRP d_clk = BEL "controlModule/addr_counter_15" BEL
         "controlModule/d_lower_5" BEL "controlModule/d_lower_4" BEL
         "controlModule/d_lower_3" BEL "controlModule/d_lower_2" BEL
         "controlModule/d_lower_1" BEL "controlModule/d_lower_0" BEL
-        "controlModule/byte_counter" BEL "controlModule/state_FSM_FFd1" BEL
-        "controlModule/state_FSM_FFd3" BEL "controlModule/state_FSM_FFd7" BEL
-        "controlModule/state_FSM_FFd2" BEL "controlModule/state_FSM_FFd4" BEL
-        "controlModule/state_FSM_FFd5" BEL "controlModule/state_FSM_FFd8" BEL
-        "controlModule/state_FSM_FFd6" BEL "controlModule/state_FSM_FFd9" BEL
-        "controlModule/state_FSM_FFd10" BEL "controlModule/state_FSM_FFd11"
-        BEL "controlModule/state_FSM_FFd12" BEL "d_clk_BUFGP/BUFG" PIN
+        "controlModule/byte_counter" BEL "controlModule/state_FSM_FFd3" BEL
+        "controlModule/state_FSM_FFd7" BEL "controlModule/state_FSM_FFd2" BEL
+        "controlModule/state_FSM_FFd4" BEL "controlModule/state_FSM_FFd5" BEL
+        "controlModule/state_FSM_FFd8" BEL "controlModule/state_FSM_FFd6" BEL
+        "controlModule/state_FSM_FFd9" BEL "controlModule/state_FSM_FFd10" BEL
+        "controlModule/state_FSM_FFd1" BEL "controlModule/state_FSM_FFd11" BEL
+        "controlModule/state_FSM_FFd12" BEL "d_clk_BUFGP/BUFG" PIN
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[31].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>"
         PIN
         "memory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[30].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>"

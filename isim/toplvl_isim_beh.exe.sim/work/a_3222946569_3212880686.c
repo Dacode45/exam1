@@ -1212,23 +1212,23 @@ static void work_a_3222946569_3212880686_p_9(char *t0)
     unsigned char t1;
     unsigned char t2;
     unsigned char t3;
-    char *t4;
+    unsigned char t4;
     char *t5;
-    unsigned char t6;
+    char *t6;
     unsigned char t7;
-    char *t8;
-    unsigned char t9;
+    unsigned char t8;
+    char *t9;
     unsigned char t10;
-    char *t11;
-    unsigned char t12;
+    unsigned char t11;
+    char *t12;
     unsigned char t13;
-    char *t14;
-    unsigned char t15;
+    unsigned char t14;
+    char *t15;
     unsigned char t16;
-    char *t17;
+    unsigned char t17;
     char *t18;
-    char *t19;
-    char *t20;
+    unsigned char t19;
+    unsigned char t20;
     char *t21;
     char *t22;
     char *t23;
@@ -1239,73 +1239,86 @@ static void work_a_3222946569_3212880686_p_9(char *t0)
     char *t28;
     char *t29;
     char *t30;
+    char *t31;
+    char *t32;
+    char *t33;
+    char *t34;
 
 LAB0:    xsi_set_current_line(151, ng0);
-    t4 = (t0 + 1512U);
-    t5 = *((char **)t4);
-    t6 = *((unsigned char *)t5);
-    t7 = (t6 == (unsigned char)5);
-    if (t7 == 1)
+    t5 = (t0 + 1512U);
+    t6 = *((char **)t5);
+    t7 = *((unsigned char *)t6);
+    t8 = (t7 == (unsigned char)5);
+    if (t8 == 1)
+        goto LAB14;
+
+LAB15:    t5 = (t0 + 1512U);
+    t9 = *((char **)t5);
+    t10 = *((unsigned char *)t9);
+    t11 = (t10 == (unsigned char)7);
+    t4 = t11;
+
+LAB16:    if (t4 == 1)
         goto LAB11;
 
-LAB12:    t4 = (t0 + 1512U);
-    t8 = *((char **)t4);
-    t9 = *((unsigned char *)t8);
-    t10 = (t9 == (unsigned char)7);
-    t3 = t10;
+LAB12:    t5 = (t0 + 1512U);
+    t12 = *((char **)t5);
+    t13 = *((unsigned char *)t12);
+    t14 = (t13 == (unsigned char)10);
+    t3 = t14;
 
 LAB13:    if (t3 == 1)
         goto LAB8;
 
-LAB9:    t4 = (t0 + 1512U);
-    t11 = *((char **)t4);
-    t12 = *((unsigned char *)t11);
-    t13 = (t12 == (unsigned char)10);
-    t2 = t13;
+LAB9:    t5 = (t0 + 1512U);
+    t15 = *((char **)t5);
+    t16 = *((unsigned char *)t15);
+    t17 = (t16 == (unsigned char)11);
+    t2 = t17;
 
 LAB10:    if (t2 == 1)
         goto LAB5;
 
-LAB6:    t4 = (t0 + 1512U);
-    t14 = *((char **)t4);
-    t15 = *((unsigned char *)t14);
-    t16 = (t15 == (unsigned char)11);
-    t1 = t16;
+LAB6:    t1 = (unsigned char)0;
 
 LAB7:    if (t1 != 0)
         goto LAB3;
 
 LAB4:
-LAB14:    t23 = xsi_get_transient_memory(1U);
-    memset(t23, 0, 1U);
-    t24 = t23;
-    memset(t24, (unsigned char)2, 1U);
-    t25 = (t0 + 6308);
-    t26 = (t25 + 32U);
-    t27 = *((char **)t26);
-    t28 = (t27 + 40U);
-    t29 = *((char **)t28);
-    memcpy(t29, t23, 1U);
-    xsi_driver_first_trans_fast_port(t25);
+LAB17:    t27 = xsi_get_transient_memory(1U);
+    memset(t27, 0, 1U);
+    t28 = t27;
+    memset(t28, (unsigned char)2, 1U);
+    t29 = (t0 + 6308);
+    t30 = (t29 + 32U);
+    t31 = *((char **)t30);
+    t32 = (t31 + 40U);
+    t33 = *((char **)t32);
+    memcpy(t33, t27, 1U);
+    xsi_driver_first_trans_fast_port(t29);
 
-LAB2:    t30 = (t0 + 5848);
-    *((int *)t30) = 1;
+LAB2:    t34 = (t0 + 5848);
+    *((int *)t34) = 1;
 
 LAB1:    return;
-LAB3:    t4 = xsi_get_transient_memory(1U);
-    memset(t4, 0, 1U);
-    t17 = t4;
-    memset(t17, (unsigned char)3, 1U);
-    t18 = (t0 + 6308);
-    t19 = (t18 + 32U);
-    t20 = *((char **)t19);
-    t21 = (t20 + 40U);
-    t22 = *((char **)t21);
-    memcpy(t22, t4, 1U);
-    xsi_driver_first_trans_fast_port(t18);
+LAB3:    t5 = xsi_get_transient_memory(1U);
+    memset(t5, 0, 1U);
+    t21 = t5;
+    memset(t21, (unsigned char)3, 1U);
+    t22 = (t0 + 6308);
+    t23 = (t22 + 32U);
+    t24 = *((char **)t23);
+    t25 = (t24 + 40U);
+    t26 = *((char **)t25);
+    memcpy(t26, t5, 1U);
+    xsi_driver_first_trans_fast_port(t22);
     goto LAB2;
 
-LAB5:    t1 = (unsigned char)1;
+LAB5:    t5 = (t0 + 2524U);
+    t18 = *((char **)t5);
+    t19 = *((unsigned char *)t18);
+    t20 = (t19 == (unsigned char)2);
+    t1 = t20;
     goto LAB7;
 
 LAB8:    t2 = (unsigned char)1;
@@ -1314,7 +1327,10 @@ LAB8:    t2 = (unsigned char)1;
 LAB11:    t3 = (unsigned char)1;
     goto LAB13;
 
-LAB15:    goto LAB2;
+LAB14:    t4 = (unsigned char)1;
+    goto LAB16;
+
+LAB18:    goto LAB2;
 
 }
 

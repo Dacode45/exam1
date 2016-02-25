@@ -121,21 +121,19 @@
       <outfile xil_pn:name="toplvl.vhd"/>
       <outfile xil_pn:name="vga.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1456424920" xil_pn:in_ck="380616651181993900" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-60896705267690469" xil_pn:start_ts="1456424912">
+    <transform xil_pn:end_ts="1456435097" xil_pn:in_ck="380616651181993900" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-60896705267690469" xil_pn:start_ts="1456435089">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="toplvl_beh.prj"/>
       <outfile xil_pn:name="toplvl_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1456424921" xil_pn:in_ck="297522525792161709" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8320435326404453416" xil_pn:start_ts="1456424920">
+    <transform xil_pn:end_ts="1456435098" xil_pn:in_ck="297522525792161709" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8320435326404453416" xil_pn:start_ts="1456435097">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="toplvl_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1456243151" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1456243151">
