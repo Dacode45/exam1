@@ -1,0 +1,17 @@
+ restart
+ isim force add /toplvl/d_clk 1 -radix bin -value 0 -radix bin -time 20 ns -repeat 40 ns
+ isim force add /toplvl/v_clk 1 -radix bin -value 0 -radix bin -time 50 ns -repeat 100 ns
+ isim force add /toplvl/data 10101010 -radix bin -value 01010101 -radix bin -time 50 ns -repeat 800 ns
+ isim force add /toplvl/rxf_l 1 -radix bin -value 0 -radix bin -time 200 ns -repeat 400 ns
+ isim force add /toplvl/rxf_l 1 -radix bin -value 0 -radix bin -time 200 ns -repeat 400 ns
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms
+ run 1.00ms

@@ -11,79 +11,9 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# restart
-# source wdrtest.do
-# source wdrtest.do2
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 368 ns(2), Instance /toplvl/controlModule/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-at 400 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-at 9606340 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 9616580 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 9626820 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-# source wdrtest2.do
-at 18182348 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 18192588 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 18202828 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-Stopped at time : 22973752 ns : File "C:/vhdl_stuff/exam1/control.vhd" Line 54
-# restart
-# source wdrtest2.do
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 400 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-at 9606340 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 9616580 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 9626820 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# source wdrtest2.do
+# source richard2.do
+# source richard2.do2
+at 1368 ns(2), Instance /toplvl/controlModule/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 at 1400 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-at 9607340 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 9617580 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-at 9627820 ns, Instance /toplvl/memory/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 1111111111111111, B read address: 1111111111111111
-
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# restart
-# source wdrtest2.do
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 400 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-# source testtop1.txt
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 280 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-# source wdrtest2.do
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# source wdrtest2.do
-at 1400 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
+# source richard.do
+# source richard1.do
