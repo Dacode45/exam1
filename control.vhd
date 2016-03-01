@@ -67,7 +67,11 @@ begin
 				if (state = s0) then
 					addr_counter <= (others => '0');
 				elsif (state = s7) then
+					if mem_full = '0' then
 						addr_counter <= addr_counter + 1;
+					else
+						addr_counter <= addr_counter;
+					end if;
 				else
 					addr_counter <= addr_counter;
 				end if;

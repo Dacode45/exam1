@@ -11,7 +11,36 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# source richard2.do2
-at 1368 ns(2), Instance /toplvl/controlModule/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-at 1432 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-# source richard1.do
+# source testtop2.txt
+# source testtop2.log
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+/toplvl/data: Could not convert given string value zzzzzzzz to an appropriate value.
+# source testtop3.log
+# source testtop3.txt
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 440 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
+# run 1.00us
+# run 1.00ms
+# run 1.00ms
+# run 1.00ms
+# run 10.00ms
+# run 10.00ms
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# source testtop3.txt
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 440 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
+# run 10.00ms
+# run 10.00ms
+# isim force add /toplvl/data 11111111 -radix bin
+# isim force add /toplvl/data 11111111 -radix bin
+# run 10.00ms
