@@ -11,9 +11,7 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# source richard2.do
 # source richard2.do2
 at 1368 ns(2), Instance /toplvl/controlModule/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-at 1400 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
-# source richard.do
+at 1432 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/toplvl/memory/U0/native_mem_module/mem_module/).
 # source richard1.do
