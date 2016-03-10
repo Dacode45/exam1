@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="data">
+			<Port Id="7" Dir="INOUT"/>
+			<Port Id="6" Dir="INOUT"/>
+			<Port Id="5" Dir="INOUT"/>
+			<Port Id="4" Dir="INOUT"/>
+			<Port Id="3" Dir="INOUT"/>
+			<Port Id="2" Dir="INOUT"/>
+			<Port Id="1" Dir="INOUT"/>
+			<Port Id="0" Dir="INOUT"/>
+		</Bus>
+		<Port Id="d_clk" Dir="IN"/>
+		<Port Id="v_clk" Dir="IN"/>
+		<Port Id="reset_h" Dir="IN"/>
+		<Port Id="rxf_l" Dir="IN"/>
+		<Port Id="txe_l" Dir="IN"/>
+		<Port Id="oe_l" Dir="OUT"/>
+		<Port Id="rd_l" Dir="OUT"/>
+		<Port Id="wr_l" Dir="OUT"/>
+		<Port Id="siwua" Dir="OUT"/>
+		<Port Id="h_sync" Dir="OUT"/>
+		<Port Id="v_sync" Dir="OUT"/>
+		<Port Id="r0" Dir="OUT"/>
+		<Port Id="r1" Dir="OUT"/>
+		<Port Id="r2" Dir="OUT"/>
+		<Port Id="g0" Dir="OUT"/>
+		<Port Id="g1" Dir="OUT"/>
+		<Port Id="g2" Dir="OUT"/>
+		<Port Id="b0" Dir="OUT"/>
+		<Port Id="b1" Dir="OUT"/>
+		<Port Id="b2" Dir="OUT"/>
+		<Port Id="led" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

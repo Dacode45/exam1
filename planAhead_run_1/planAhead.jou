@@ -1,0 +1,373 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Mar 09 19:47:36 2016
+# Process ID: 6124
+# Log file: C:/vhdl_stuff/exam1/planAhead_run_1/planAhead.log
+# Journal file: C:/vhdl_stuff/exam1/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/vhdl_stuff/exam1/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS25 [get_ports [list {data[7]} {data[6]} {data[5]} {data[4]} {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  b0]]
+set_property package_pin "" [get_ports [list  b1]]
+set_property package_pin "" [get_ports [list  b0]]
+set_property compatible_config_modes {{Master Serial}} [current_design]
+set_property prohibit 1 [get_sites [list P65 P144 P70 P64 P60 P74 P38 P69 P39]]
+startgroup
+set_property package_pin P7 [get_ports led]
+set_property package_pin P15 [get_ports b2]
+set_property package_pin P8 [get_ports r0]
+set_property package_pin P12 [get_ports g1]
+set_property package_pin P9 [get_ports g2]
+set_property package_pin P6 [get_ports r2]
+set_property package_pin P14 [get_ports b1]
+set_property package_pin P11 [get_ports g0]
+set_property package_pin P17 [get_ports b0]
+set_property package_pin P5 [get_ports r1]
+set_property package_pin P10 [get_ports h_sync]
+endgroup
+undo
+set_property package_pin "" [get_ports [list  r0]]
+startgroup
+set_property package_pin P5 [get_ports r2]
+endgroup
+set_property package_pin "" [get_ports [list  r1]]
+startgroup
+set_property package_pin P6 [get_ports r1]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports r0]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports g2]
+endgroup
+set_property package_pin "" [get_ports [list  g1]]
+startgroup
+set_property package_pin P9 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports b1]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports b0]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports led]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports h_sync]
+endgroup
+set_property package_pin "" [get_ports [list  d_clk]]
+set_property package_pin "" [get_ports [list  v_sync]]
+startgroup
+set_property package_pin P30 [get_ports v_sync]
+endgroup
+startgroup
+set_property package_pin P95 [get_ports d_clk]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports txe_l]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports oe_l]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports oe_l]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports wr_l]
+endgroup
+set_property package_pin "" [get_ports [list  rxf_l]]
+startgroup
+set_property package_pin P99 [get_ports rxf_l]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports rd_l]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports reset_h]
+endgroup
+startgroup
+set_property package_pin P124 [get_ports {data[2]}]
+set_property package_pin P117 [get_ports {data[0]}]
+set_property package_pin P121 [get_ports {data[1]}]
+set_property package_pin P132 [get_ports {data[3]}]
+set_property package_pin P138 [get_ports {data[4]}]
+set_property package_pin P142 [get_ports {data[5]}]
+set_property package_pin P111 [get_ports {data[6]}]
+set_property package_pin P116 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P124 [get_ports {data[2]}]
+set_property package_pin P117 [get_ports {data[0]}]
+set_property package_pin P121 [get_ports {data[1]}]
+set_property package_pin P133 [get_ports {data[4]}]
+set_property package_pin P112 [get_ports {data[5]}]
+set_property package_pin P143 [get_ports {data[6]}]
+set_property package_pin P139 [get_ports {data[7]}]
+endgroup
+undo
+undo
+startgroup
+set_property package_pin P80 [get_ports d_clk]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports d_clk]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P83 [get_ports rd_l]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports rxf_l]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports oe_l]
+endgroup
+set_property package_pin "" [get_ports [list  {data[7]}]]
+startgroup
+set_property package_pin P143 [get_ports {data[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[6]}]]
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[7]}]]
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[6]}]]
+startgroup
+set_property package_pin P141 [get_ports {data[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property package_pin "" [get_ports [list  {data[5]}]]
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property package_pin "" [get_ports [list  {data[5]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  {data[6]}]]
+startgroup
+set_property package_pin P141 [get_ports {data[6]}]
+endgroup
+startgroup
+set_property package_pin P143 [get_ports {data[6]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {data[6]}]]
+set_property package_pin "" [get_ports [list  {data[6]}]]
+set_property NAME {} [get_ports {data[6]}]
+startgroup
+set_property package_pin P119 [get_ports {data[2]}]
+set_property package_pin P126 [get_ports {data[0]}]
+set_property package_pin P115 [get_ports {data[1]}]
+set_property package_pin P127 [get_ports {data[3]}]
+set_property package_pin P134 [get_ports {data[4]}]
+set_property package_pin P140 [get_ports {data[5]}]
+set_property package_pin P114 [get_ports {data[6]}]
+set_property package_pin P118 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {data[4]}]
+endgroup
+save_constraints
+report_power
+report_drc -name drc_1
+startgroup
+set_property package_pin P137 [get_ports {data[4]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {data[4]}]
+endgroup
+report_drc -name drc_2
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property NAME {} [get_ports {data[4]}]
+set_property package_pin "" [get_ports [list  {data[0]} {data[5]} {data[1]} {data[6]} {data[3]} {data[7]} {data[2]}]]
+set_property iostandard LVCMOS25 [get_ports [list {data[6]} {data[7]} {data[4]} {data[5]}]]
+set_property prohibit 0 [get_sites P144]
+save_constraints
+set_property NAME {p143} [get_ports {data[6]}]
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P141 [get_ports {data[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property package_pin "" [get_ports [list  {data[5]}]]
+set_property package_pin "" [get_ports [list  {data[1]}]]
+startgroup
+set_property package_pin P138 [get_ports {data[5]}]
+endgroup
+startgroup
+set_property package_pin P137 [get_ports {data[4]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[3]}]]
+startgroup
+set_property package_pin P121 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin P120 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P119 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P118 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P117 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin P116 [get_ports {data[0]}]
+endgroup
+save_constraints
+report_drc -name drc_3
+reset_drc -name drc_3
+reset_drc -name drc_2
+reset_drc -name drc_1
+set_property iostandard LVCMOS25 [get_ports [list txe_l]]
+set_property iostandard LVCMOS25 [get_ports [list r1]]
+set_property iostandard LVCMOS25 [get_ports [list r2]]
+set_property iostandard LVCMOS25 [get_ports [list v_clk]]
+set_property iostandard LVCMOS25 [get_ports [list r0]]
+set_property iostandard LVCMOS25 [get_ports [list g2]]
+set_property iostandard LVCMOS25 [get_ports [list g1]]
+set_property iostandard LVCMOS25 [get_ports [list g0]]
+set_property iostandard LVCMOS25 [get_ports [list b2]]
+set_property iostandard LVCMOS25 [get_ports [list b1]]
+set_property iostandard LVCMOS25 [get_ports [list b0]]
+set_property iostandard LVCMOS25 [get_ports [list led]]
+set_property iostandard LVCMOS25 [get_ports [list h_sync]]
+set_property iostandard LVCMOS25 [get_ports [list v_sync]]
+set_property iostandard LVCMOS25 [get_ports [list reset_h]]
+set_property iostandard LVCMOS25 [get_ports [list d_clk]]
+set_property iostandard LVCMOS25 [get_ports [list siwua]]
+set_property iostandard LVCMOS25 [get_ports [list rd_l]]
+set_property iostandard LVCMOS25 [get_ports [list rxf_l]]
+set_property iostandard LVCMOS25 [get_ports [list oe_l]]
+set_property iostandard LVCMOS25 [get_ports [list wr_l]]
+set_property iostandard LVCMOS33 [get_ports [list {data[7]} {data[6]} {data[5]} {data[4]} {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list txe_l]]
+set_property iostandard LVCMOS33 [get_ports [list wr_l]]
+set_property iostandard LVCMOS33 [get_ports [list oe_l]]
+set_property iostandard LVCMOS33 [get_ports [list rxf_l]]
+set_property iostandard LVCMOS33 [get_ports [list rd_l]]
+set_property iostandard LVCMOS33 [get_ports [list siwua]]
+set_property iostandard LVCMOS33 [get_ports [list d_clk]]
+set_property iostandard LVCMOS33 [get_ports [list reset_h]]
+set_property iostandard LVCMOS33 [get_ports [list v_sync]]
+set_property iostandard LVCMOS33 [get_ports [list h_sync]]
+set_property iostandard LVCMOS33 [get_ports [list led]]
+set_property iostandard LVCMOS33 [get_ports [list b0]]
+set_property iostandard LVCMOS33 [get_ports [list b1]]
+set_property iostandard LVCMOS33 [get_ports [list b2]]
+set_property iostandard LVCMOS33 [get_ports [list g0]]
+set_property iostandard LVCMOS33 [get_ports [list g1]]
+set_property iostandard LVCMOS33 [get_ports [list g2]]
+set_property iostandard LVCMOS33 [get_ports [list r0]]
+set_property iostandard LVCMOS33 [get_ports [list r1]]
+save_constraints
+report_drc -name drc_1
+set_property iostandard LVCMOS33 [get_ports [list r2]]
+startgroup
+set_property package_pin P33 [get_ports v_sync]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports v_sync]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports h_sync]
+endgroup
+startgroup
+set_property package_pin P30 [get_ports led]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports b0]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports b1]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P23 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P22 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports led]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports g2]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports r0]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports r1]
+endgroup
+startgroup
+set_property package_pin P6 [get_ports r2]
+endgroup
+report_drc -name drc_2
+reset_drc -name drc_1
+save_constraints
+set_switching_activity -toggle_rate 50 -type inputs
+set_switching_activity -toggle_rate 100 -type outputs
+set_switching_activity -toggle_rate 50 -type registers
+report_power
+save_constraints
+write_ucf C:/vhdl_stuff/exam1/planAhead_run_2/elab_constrs_1.ucf -mode port
+write_csv C:/vhdl_stuff/exam1/planAhead_run_2/elab_constrs_1.csv -force
+write_ucf C:/vhdl_stuff/exam1/planAhead_run_2/elab_constrs_1.ucf -mode port
+startgroup
+set_property package_pin P81 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P84 [get_ports d_clk]
+endgroup
+report_drc -name drc_1

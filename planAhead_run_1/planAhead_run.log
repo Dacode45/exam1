@@ -1,0 +1,541 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/vhdl_stuff/exam1/pa.fromHdl.tcl
+# create_project -name exam1 -dir "C:/vhdl_stuff/exam1/planAhead_run_2" -part xc6slx9tqg144-2
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "exam1.ucf" [current_fileset -constrset]
+Adding file 'C:/vhdl_stuff/exam1/exam1.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {ipcore_dir/my2port.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {vga.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ledModule.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {control.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {toplvl.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top toplvl $srcset
+# add_files [list {exam1.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/my2port.ncf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-2
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/vhdl_stuff/exam1/vga.vhd" into library work
+Parsing VHDL file "C:/vhdl_stuff/exam1/ledModule.vhd" into library work
+Parsing VHDL file "C:/vhdl_stuff/exam1/ipcore_dir/my2port.vhd" into library work
+Parsing VHDL file "C:/vhdl_stuff/exam1/control.vhd" into library work
+Parsing VHDL file "C:/vhdl_stuff/exam1/toplvl.vhd" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'my2port' instantiated as 'memory' [C:/vhdl_stuff/exam1/toplvl.vhd:141]
+Resolution: File names need to match cell names: an EDIF definition will be found in my2port.edf; an HDL definition may be placed in any Verilog/VHDL file.
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/vhdl_stuff/exam1/exam1.ucf]
+Finished Parsing UCF File [C:/vhdl_stuff/exam1/exam1.ucf]
+CRITICAL WARNING: [Constraints 18-329] No definition for group 'clk', timing constraint is ignored [C:/vhdl_stuff/exam1/exam1.ucf:2]
+CRITICAL WARNING: [Constraints 18-329] No definition for group 'vgaclk', timing constraint is ignored [C:/vhdl_stuff/exam1/exam1.ucf:9]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 3be00789
+open_rtl_design: Time (s): elapsed = 00:00:10 . Memory (MB): peak = 600.855 ; gain = 164.539
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS25 [get_ports [list {data[7]} {data[6]} {data[5]} {data[4]} {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  b0]]
+set_property package_pin "" [get_ports [list  b1]]
+set_property package_pin "" [get_ports [list  b0]]
+set_property compatible_config_modes {{Master Serial}} [current_design]
+set_property prohibit 1 [get_sites [list P65 P144 P70 P64 P60 P74 P38 P69 P39]]
+startgroup
+set_property package_pin P7 [get_ports led]
+set_property package_pin P15 [get_ports b2]
+set_property package_pin P8 [get_ports r0]
+set_property package_pin P12 [get_ports g1]
+set_property package_pin P9 [get_ports g2]
+set_property package_pin P6 [get_ports r2]
+set_property package_pin P14 [get_ports b1]
+set_property package_pin P11 [get_ports g0]
+set_property package_pin P17 [get_ports b0]
+set_property package_pin P5 [get_ports r1]
+set_property package_pin P10 [get_ports h_sync]
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'set_property package_pin P10 [get_ports h_sync]'
+INFO: [Common 17-17] undo 'set_property package_pin P5 [get_ports r1]'
+INFO: [Common 17-17] undo 'set_property package_pin P17 [get_ports b0]'
+INFO: [Common 17-17] undo 'set_property package_pin P11 [get_ports g0]'
+INFO: [Common 17-17] undo 'set_property package_pin P14 [get_ports b1]'
+INFO: [Common 17-17] undo 'set_property package_pin P6 [get_ports r2]'
+INFO: [Common 17-17] undo 'set_property package_pin P9 [get_ports g2]'
+INFO: [Common 17-17] undo 'set_property package_pin P12 [get_ports g1]'
+INFO: [Common 17-17] undo 'set_property package_pin P8 [get_ports r0]'
+INFO: [Common 17-17] undo 'set_property package_pin P15 [get_ports b2]'
+INFO: [Common 17-17] undo 'set_property package_pin P7 [get_ports led]'
+INFO: [Common 17-17] undo 'startgroup'
+set_property package_pin "" [get_ports [list  r0]]
+startgroup
+set_property package_pin P5 [get_ports r2]
+endgroup
+set_property package_pin "" [get_ports [list  r1]]
+startgroup
+set_property package_pin P6 [get_ports r1]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports r0]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports g2]
+endgroup
+set_property package_pin "" [get_ports [list  g1]]
+startgroup
+set_property package_pin P9 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports b1]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports b0]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports led]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports h_sync]
+endgroup
+set_property package_pin "" [get_ports [list  d_clk]]
+set_property package_pin "" [get_ports [list  v_sync]]
+startgroup
+set_property package_pin P30 [get_ports v_sync]
+endgroup
+startgroup
+set_property package_pin P95 [get_ports d_clk]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports txe_l]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports oe_l]
+endgroup
+startgroup
+set_property package_pin P100 [get_ports oe_l]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports wr_l]
+endgroup
+set_property package_pin "" [get_ports [list  rxf_l]]
+startgroup
+set_property package_pin P99 [get_ports rxf_l]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports rd_l]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P78 [get_ports reset_h]
+endgroup
+startgroup
+set_property package_pin P124 [get_ports {data[2]}]
+set_property package_pin P117 [get_ports {data[0]}]
+set_property package_pin P121 [get_ports {data[1]}]
+set_property package_pin P132 [get_ports {data[3]}]
+set_property package_pin P138 [get_ports {data[4]}]
+set_property package_pin P142 [get_ports {data[5]}]
+set_property package_pin P111 [get_ports {data[6]}]
+set_property package_pin P116 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P124 [get_ports {data[2]}]
+set_property package_pin P117 [get_ports {data[0]}]
+set_property package_pin P121 [get_ports {data[1]}]
+set_property package_pin P133 [get_ports {data[4]}]
+set_property package_pin P112 [get_ports {data[5]}]
+set_property package_pin P143 [get_ports {data[6]}]
+set_property package_pin P139 [get_ports {data[7]}]
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'set_property package_pin P139 [get_ports {data[7]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P143 [get_ports {data[6]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P112 [get_ports {data[5]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P133 [get_ports {data[4]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P121 [get_ports {data[1]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P117 [get_ports {data[0]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P124 [get_ports {data[2]}]'
+INFO: [Common 17-17] undo 'startgroup'
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'set_property package_pin P116 [get_ports {data[7]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P111 [get_ports {data[6]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P142 [get_ports {data[5]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P138 [get_ports {data[4]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P132 [get_ports {data[3]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P121 [get_ports {data[1]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P117 [get_ports {data[0]}]'
+INFO: [Common 17-17] undo 'set_property package_pin P124 [get_ports {data[2]}]'
+INFO: [Common 17-17] undo 'startgroup'
+startgroup
+set_property package_pin P80 [get_ports d_clk]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports d_clk]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P83 [get_ports rd_l]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports rxf_l]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports oe_l]
+endgroup
+set_property package_pin "" [get_ports [list  {data[7]}]]
+startgroup
+set_property package_pin P143 [get_ports {data[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[6]}]]
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[7]}]]
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[6]}]]
+startgroup
+set_property package_pin P141 [get_ports {data[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property package_pin "" [get_ports [list  {data[5]}]]
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property package_pin "" [get_ports [list  {data[5]}]]
+set_property package_pin "" [get_ports [list  {data[7]}]]
+set_property package_pin "" [get_ports [list  {data[6]}]]
+startgroup
+set_property package_pin P141 [get_ports {data[6]}]
+endgroup
+startgroup
+set_property package_pin P143 [get_ports {data[6]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {data[6]}]]
+set_property package_pin "" [get_ports [list  {data[6]}]]
+set_property NAME {} [get_ports {data[6]}]
+startgroup
+set_property package_pin P119 [get_ports {data[2]}]
+set_property package_pin P126 [get_ports {data[0]}]
+set_property package_pin P115 [get_ports {data[1]}]
+set_property package_pin P127 [get_ports {data[3]}]
+set_property package_pin P134 [get_ports {data[4]}]
+set_property package_pin P140 [get_ports {data[5]}]
+set_property package_pin P114 [get_ports {data[6]}]
+set_property package_pin P118 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {data[4]}]
+endgroup
+save_constraints
+report_power
+INFO: [Designutils 20-301] Performing resource estimation on toplvl targeting spartan6...
+INFO: [Designutils 20-286] Found 46 primitives in netlist
+INFO: [Designutils 20-303] Reporting estimation...
+INFO: [Designutils 20-300] Optimized 1 multiplexer trees
+INFO: [Designutils 20-285] Found 1 multiplexers used for register control logic
+INFO: [Designutils 20-289] Found 20 registers consumed by IOBs
+INFO: [Designutils 20-297] Merged 4 bitwise logic elements
+WARNING: [Designutils 20-278] Estimation does not include 1 empty CellViews (see warnings)
+INFO: [Designutils 20-277] Completed resource estimation on toplvl - Slices: 27, LUTs: 71, Flops: 47, BRAMs: 0, DSP48s: 0
+WARNING: [Designutils 20-239] Using spartan6 default operating conditions in power estimation. To modify, use the set_operating_conditions command.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCO135 for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTAVTT for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVCC for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVCCPLL for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVCCRX for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVTT for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTVCCAUX for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCAUXIO for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCBRAM for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTZAVCC for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTZVCCH for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTZVCCL for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCPINT for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCPAUX for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCODDR for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCPLL for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCOMIO0 for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCOMIO1 for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source  for the family spartan6. Ignoring the voltage setting.
+INFO: [Designutils 20-231] Performing power estimation on toplvl...
+WARNING: [Designutils 20-238] Unspecified clock input 'd_clk'.  Using default frequency of 0.00 MHz.
+WARNING: [Designutils 20-238] Unspecified clock input 'v_clk'.  Using default frequency of 0.00 MHz.
+INFO: [Designutils 20-228] Found 16-bit counter at 'controlModule/addr_counter' in power estimation - using toggle rate of ~0.01%.
+INFO: [Designutils 20-229] Found 8-state FSM at 'controlModule/state' in power estimation - using toggle rate of 2.73%.
+INFO: [Designutils 20-217] 3 out of 47 registers in this design were found to not use a clock enable.
+INFO: [Designutils 20-228] Found 10-bit counter at 'vgaModule/h_counter' in power estimation - using toggle rate of 19.98%.
+INFO: [Designutils 20-228] Found 10-bit counter at 'vgaModule/v_counter' in power estimation - using toggle rate of 0.02%.
+WARNING: [Designutils 20-238] Unspecified clock input 'd_clk'.  Using default frequency of 0.00 MHz.
+WARNING: [Designutils 20-238] Unspecified clock input 'v_clk'.  Using default frequency of 0.00 MHz.
+INFO: [Designutils 20-222] Completed power estimation on toplvl - Total power: 14 mW.
+report_drc -name drc_1
+INFO: [Drc 23-27] Running DRC with 2 threads
+startgroup
+set_property package_pin P137 [get_ports {data[4]}]
+endgroup
+startgroup
+set_property package_pin P133 [get_ports {data[4]}]
+endgroup
+report_drc -name drc_2
+INFO: [Drc 23-27] Running DRC with 2 threads
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property NAME {} [get_ports {data[4]}]
+set_property package_pin "" [get_ports [list  {data[0]} {data[5]} {data[1]} {data[6]} {data[3]} {data[7]} {data[2]}]]
+set_property iostandard LVCMOS25 [get_ports [list {data[6]} {data[7]} {data[4]} {data[5]}]]
+set_property prohibit 0 [get_sites P144]
+save_constraints
+set_property NAME {p143} [get_ports {data[6]}]
+startgroup
+set_property package_pin P142 [get_ports {data[7]}]
+endgroup
+startgroup
+set_property package_pin P141 [get_ports {data[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[4]}]]
+set_property package_pin "" [get_ports [list  {data[5]}]]
+set_property package_pin "" [get_ports [list  {data[1]}]]
+startgroup
+set_property package_pin P138 [get_ports {data[5]}]
+endgroup
+startgroup
+set_property package_pin P137 [get_ports {data[4]}]
+endgroup
+set_property package_pin "" [get_ports [list  {data[3]}]]
+startgroup
+set_property package_pin P121 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin P120 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P119 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P118 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P117 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin P116 [get_ports {data[0]}]
+endgroup
+save_constraints
+report_drc -name drc_3
+INFO: [Drc 23-27] Running DRC with 2 threads
+reset_drc -name drc_3
+reset_drc -name drc_2
+reset_drc -name drc_1
+set_property iostandard LVCMOS25 [get_ports [list txe_l]]
+set_property iostandard LVCMOS25 [get_ports [list r1]]
+set_property iostandard LVCMOS25 [get_ports [list r2]]
+set_property iostandard LVCMOS25 [get_ports [list v_clk]]
+set_property iostandard LVCMOS25 [get_ports [list r0]]
+set_property iostandard LVCMOS25 [get_ports [list g2]]
+set_property iostandard LVCMOS25 [get_ports [list g1]]
+set_property iostandard LVCMOS25 [get_ports [list g0]]
+set_property iostandard LVCMOS25 [get_ports [list b2]]
+set_property iostandard LVCMOS25 [get_ports [list b1]]
+set_property iostandard LVCMOS25 [get_ports [list b0]]
+set_property iostandard LVCMOS25 [get_ports [list led]]
+set_property iostandard LVCMOS25 [get_ports [list h_sync]]
+set_property iostandard LVCMOS25 [get_ports [list v_sync]]
+set_property iostandard LVCMOS25 [get_ports [list reset_h]]
+set_property iostandard LVCMOS25 [get_ports [list d_clk]]
+set_property iostandard LVCMOS25 [get_ports [list siwua]]
+set_property iostandard LVCMOS25 [get_ports [list rd_l]]
+set_property iostandard LVCMOS25 [get_ports [list rxf_l]]
+set_property iostandard LVCMOS25 [get_ports [list oe_l]]
+set_property iostandard LVCMOS25 [get_ports [list wr_l]]
+set_property iostandard LVCMOS33 [get_ports [list {data[7]} {data[6]} {data[5]} {data[4]} {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list txe_l]]
+set_property iostandard LVCMOS33 [get_ports [list wr_l]]
+set_property iostandard LVCMOS33 [get_ports [list oe_l]]
+set_property iostandard LVCMOS33 [get_ports [list rxf_l]]
+set_property iostandard LVCMOS33 [get_ports [list rd_l]]
+set_property iostandard LVCMOS33 [get_ports [list siwua]]
+set_property iostandard LVCMOS33 [get_ports [list d_clk]]
+set_property iostandard LVCMOS33 [get_ports [list reset_h]]
+set_property iostandard LVCMOS33 [get_ports [list v_sync]]
+set_property iostandard LVCMOS33 [get_ports [list h_sync]]
+set_property iostandard LVCMOS33 [get_ports [list led]]
+set_property iostandard LVCMOS33 [get_ports [list b0]]
+set_property iostandard LVCMOS33 [get_ports [list b1]]
+set_property iostandard LVCMOS33 [get_ports [list b2]]
+set_property iostandard LVCMOS33 [get_ports [list g0]]
+set_property iostandard LVCMOS33 [get_ports [list g1]]
+set_property iostandard LVCMOS33 [get_ports [list g2]]
+set_property iostandard LVCMOS33 [get_ports [list r0]]
+set_property iostandard LVCMOS33 [get_ports [list r1]]
+save_constraints
+report_drc -name drc_1
+INFO: [Drc 23-27] Running DRC with 2 threads
+set_property iostandard LVCMOS33 [get_ports [list r2]]
+startgroup
+set_property package_pin P33 [get_ports v_sync]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports v_sync]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports h_sync]
+endgroup
+startgroup
+set_property package_pin P30 [get_ports led]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports b0]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports b1]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P23 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P22 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports led]
+endgroup
+startgroup
+set_property package_pin P26 [get_ports b2]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports g0]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports g1]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports g2]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports r0]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports r1]
+endgroup
+startgroup
+set_property package_pin P6 [get_ports r2]
+endgroup
+report_drc -name drc_2
+INFO: [Drc 23-27] Running DRC with 2 threads
+reset_drc -name drc_1
+save_constraints
+set_switching_activity -toggle_rate 50 -type inputs
+set_switching_activity -toggle_rate 100 -type outputs
+set_switching_activity -toggle_rate 50 -type registers
+report_power
+WARNING: [Designutils 20-239] Using spartan6 default operating conditions in power estimation. To modify, use the set_operating_conditions command.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCO135 for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTAVTT for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVCC for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVCCPLL for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVCCRX for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTHAVTT for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTVCCAUX for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCAUXIO for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCBRAM for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTZAVCC for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTZVCCH for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source MGTZVCCL for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCPINT for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCPAUX for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCODDR for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCPLL for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCOMIO0 for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source VCCOMIO1 for the family spartan6. Ignoring the voltage setting.
+WARNING: [Designutils 20-266] Invalid Voltage Source  for the family spartan6. Ignoring the voltage setting.
+INFO: [Designutils 20-231] Performing power estimation on toplvl...
+WARNING: [Designutils 20-238] Unspecified clock input 'd_clk'.  Using default frequency of 0.00 MHz.
+WARNING: [Designutils 20-238] Unspecified clock input 'v_clk'.  Using default frequency of 0.00 MHz.
+INFO: [Designutils 20-228] Found 16-bit counter at 'controlModule/addr_counter' in power estimation - using toggle rate of ~0.01%.
+INFO: [Designutils 20-229] Found 8-state FSM at 'controlModule/state' in power estimation - using toggle rate of 6.25%.
+INFO: [Designutils 20-217] 3 out of 47 registers in this design were found to not use a clock enable.
+INFO: [Designutils 20-228] Found 10-bit counter at 'vgaModule/h_counter' in power estimation - using toggle rate of 19.98%.
+INFO: [Designutils 20-228] Found 10-bit counter at 'vgaModule/v_counter' in power estimation - using toggle rate of 0.02%.
+WARNING: [Designutils 20-238] Unspecified clock input 'd_clk'.  Using default frequency of 0.00 MHz.
+WARNING: [Designutils 20-238] Unspecified clock input 'v_clk'.  Using default frequency of 0.00 MHz.
+INFO: [Designutils 20-222] Completed power estimation on toplvl - Total power: 14 mW.
+save_constraints
+CRITICAL WARNING: [Constraints 18-89] sdc timing constraints are not supported in 'ucf' format. It will not be converted
+CRITICAL WARNING: [Constraints 18-89] sdc timing constraints are not supported in 'ucf' format. It will not be converted
+CRITICAL WARNING: [Constraints 18-89] sdc timing constraints are not supported in 'ucf' format. It will not be converted
+write_ucf C:/vhdl_stuff/exam1/planAhead_run_2/elab_constrs_1.ucf -mode port
+write_csv C:/vhdl_stuff/exam1/planAhead_run_2/elab_constrs_1.csv -force
+write_ucf C:/vhdl_stuff/exam1/planAhead_run_2/elab_constrs_1.ucf -mode port
+startgroup
+set_property package_pin P81 [get_ports siwua]
+endgroup
+startgroup
+set_property package_pin P84 [get_ports d_clk]
+endgroup
+report_drc -name drc_1
+INFO: [Drc 23-27] Running DRC with 2 threads
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed Mar 09 22:47:47 2016...
+INFO: [Common 17-83] Releasing license: PlanAhead

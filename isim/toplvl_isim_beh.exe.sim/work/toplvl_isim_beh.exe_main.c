@@ -43,6 +43,7 @@ int main(int argc, char **argv)
     xilinxcorelib_a_2083175545_0543512595_init();
     xilinxcorelib_a_2907905644_3212880686_init();
     work_a_2198207150_0141868027_init();
+    work_a_1691245169_3212880686_init();
     work_a_1243295117_3212880686_init();
 
 

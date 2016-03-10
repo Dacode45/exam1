@@ -6,4 +6,93 @@ OFFSET = OUT 5.667 ns AFTER "d_clk";
 OFFSET = IN 9 ns VALID 9.5 ns BEFORE "d_clk";
 
 NET "v_clk" TNM_NET = "v_clk";
-TIMESPEC TS_2 = PERIOD "vgaclk" 40.0 ns HIGH 50 %;
+TIMESPEC TS_2 = PERIOD "vgaclk" 40 ns HIGH 50 %;
+
+# PlanAhead Generated physical constraints 
+
+CONFIG PROHIBIT = P65;
+CONFIG PROHIBIT = P39;
+CONFIG PROHIBIT = P70;
+CONFIG PROHIBIT = P64;
+CONFIG PROHIBIT = P60;
+CONFIG PROHIBIT = P74;
+CONFIG PROHIBIT = P38;
+CONFIG PROHIBIT = P69;
+NET "txe_l" LOC = P102;
+NET "wr_l" LOC = P101;
+NET "reset_h" LOC = P78;
+NET "d_clk" LOC = P79;
+NET "siwua" LOC = P81;
+NET "rd_l" LOC = P83;
+NET "rxf_l" LOC = P97;
+NET "oe_l" LOC = P98;
+NET "data[7]" LOC = P142;
+NET "data[6]" LOC = P141;
+NET "data[5]" LOC = P138;
+NET "data[4]" LOC = P137;
+NET "data[3]" LOC = P121;
+NET "data[2]" LOC = P118;
+NET "data[1]" LOC = P117;
+NET "data[0]" LOC = P116;
+
+# PlanAhead Generated IO constraints 
+
+NET "v_clk" IOSTANDARD = LVCMOS25;
+NET "data[7]" IOSTANDARD = LVCMOS33;
+NET "data[6]" IOSTANDARD = LVCMOS33;
+NET "data[5]" IOSTANDARD = LVCMOS33;
+NET "data[4]" IOSTANDARD = LVCMOS33;
+NET "data[3]" IOSTANDARD = LVCMOS33;
+NET "data[2]" IOSTANDARD = LVCMOS33;
+NET "data[1]" IOSTANDARD = LVCMOS33;
+NET "data[0]" IOSTANDARD = LVCMOS33;
+NET "txe_l" IOSTANDARD = LVCMOS33;
+NET "wr_l" IOSTANDARD = LVCMOS33;
+NET "oe_l" IOSTANDARD = LVCMOS33;
+NET "rxf_l" IOSTANDARD = LVCMOS33;
+NET "rd_l" IOSTANDARD = LVCMOS33;
+NET "siwua" IOSTANDARD = LVCMOS33;
+NET "d_clk" IOSTANDARD = LVCMOS33;
+NET "reset_h" IOSTANDARD = LVCMOS33;
+NET "v_sync" IOSTANDARD = LVCMOS33;
+NET "h_sync" IOSTANDARD = LVCMOS33;
+NET "led" IOSTANDARD = LVCMOS33;
+NET "b0" IOSTANDARD = LVCMOS33;
+NET "b1" IOSTANDARD = LVCMOS33;
+NET "b2" IOSTANDARD = LVCMOS33;
+NET "g0" IOSTANDARD = LVCMOS33;
+NET "g1" IOSTANDARD = LVCMOS33;
+NET "g2" IOSTANDARD = LVCMOS33;
+NET "r0" IOSTANDARD = LVCMOS33;
+NET "r1" IOSTANDARD = LVCMOS33;
+NET "r2" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "v_sync" LOC = P35;
+NET "h_sync" LOC = P33;
+NET "b0" LOC = P29;
+NET "b1" LOC = P27;
+NET "led" LOC = P32;
+NET "b2" LOC = P26;
+NET "g0" LOC = P12;
+NET "g1" LOC = P11;
+NET "g2" LOC = P10;
+NET "r0" LOC = P8;
+NET "r1" LOC = P7;
+NET "r2" LOC = P6;
+
+# PlanAhead Generated SDC timing constraints 
+
+
+# sdc timing constraints are not supported in 'ucf' format. It will not be converted
+#
+#set_switching_activity -toggle_rate 50.000 -type {inputs}
+
+# sdc timing constraints are not supported in 'ucf' format. It will not be converted
+#
+#set_switching_activity -toggle_rate 100.000 -type {outputs}
+
+# sdc timing constraints are not supported in 'ucf' format. It will not be converted
+#
+#set_switching_activity -toggle_rate 50.000 -type {registers}

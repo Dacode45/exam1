@@ -17,8 +17,9 @@ entity control is
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
 		en_mem : OUT STD_LOGIC_VECTOR(0 downto 0);
 		d_in : IN STD_LOGIC_VECTOR(7 downto 0);
-		reset_ext : IN STD_LOGIC;
-		d_out : OUT STD_LOGIC_VECTOR(8 downto 0)
+		reset_l : IN STD_LOGIC;
+		d_out : OUT STD_LOGIC_VECTOR(8 downto 0);
+		watch_dog : OUT STD_LOGIC
 	);
 end control;
 
@@ -45,7 +46,7 @@ architecture Behavioral of control is
 
 	--Register
 	SIGNAL addr_counter : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
-	
+	SIGNAL watch_dog_int : STD_LOGIC := '0';
 begin
 
 
@@ -53,10 +54,16 @@ begin
 	BEGIN
 		--Handle state transition
 		if (rising_edge(clk)) then
-			if(reset_ext = '1' or crap='1') then
+			if(reset_l = '0' or crap='1') then
 				state <= s0;
 			else
 				state <= nxt_state;
+			end if;
+			
+			if(state = s0 or state = s1 or state = s2 or state = s3 or state = s4 or state = s5 or state = s6 or state = s7) then
+				watch_dog_int <= not watch_dog_int;
+			else
+				watch_dog_int <= '1';
 			end if;
 		end if;
 	END PROCESS clkd;
@@ -142,6 +149,8 @@ begin
 	--Can't do for some reason d_out <= (d_upper & d_lower)(8 downto 0);
 	concat <= (d_upper & d_lower);
 	d_out <= concat(8 downto 0);
+	
+	watch_dog <= watch_dog_int;
 	
 end Behavioral;
 

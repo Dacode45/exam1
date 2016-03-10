@@ -7,7 +7,7 @@ entity toplvl is
 		v_clk : IN STD_LOGIC;
 		
 		--control
-		reset_h : IN STD_LOGIC;
+		reset_l : IN STD_LOGIC;
 		
 		rxf_l : IN STD_LOGIC;
 		txe_l : IN STD_LOGIC;
@@ -15,6 +15,7 @@ entity toplvl is
 		rd_l : OUT STD_LOGIC;
 		wr_l : OUT STD_LOGIC;
 		siwua : OUT STD_LOGIC;
+		wdi: OUT STD_LOGIC;
 		data : INOUT STD_LOGIC_VECTOR(7 downto 0);
 		---vga
 		
@@ -28,7 +29,8 @@ entity toplvl is
 		g2 : OUT STD_LOGIC;
 		b0 : OUT STD_LOGIC;
 		b1 : OUT STD_LOGIC;
-		b2 : OUT STD_LOGIC
+		b2 : OUT STD_LOGIC;
+		led: OUT STD_LOGIC
 		
 	);
 end toplvl;
@@ -50,6 +52,15 @@ COMPONENT my2port
   );
 END COMPONENT;
 
+--LED
+COMPONENT ledModule
+	PORT(
+		clk	: IN STD_LOGIC;
+		blink : in std_logic_vector(0 downto 0);
+		led : out std_logic
+	);
+end COMPONENT;
+
 --Control
 COMPONENT control
 	PORT(
@@ -61,8 +72,9 @@ COMPONENT control
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
 		en_mem : OUT STD_LOGIC_VECTOR(0 downto 0);
 		d_in : IN STD_LOGIC_VECTOR(7 downto 0);
-		reset_ext : IN STD_LOGIC;
-		d_out : OUT STD_LOGIC_VECTOR(8 downto 0)
+		reset_l : IN STD_LOGIC;
+		d_out : OUT STD_LOGIC_VECTOR(8 downto 0);
+		watch_dog : OUT STD_LOGIC
 	);
 end COMPONENT;
 
@@ -91,6 +103,7 @@ SIGNAL color_in : STD_LOGIC_VECTOR(8 downto 0);
 SIGNAL color_out : STD_LOGIC_VECTOR(8 downto 0);
 
 SIGNAL mem_en : STD_LOGIC_VECTOR(0 downto 0);
+SIGNAL reset_h : STD_LOGIC;
 
 SIGNAL addr_in : STD_LOGIC_VECTOR(15 downto 0);
 SIGNAL addr_out : STD_LOGIC_VECTOR(15 downto 0);
@@ -107,8 +120,8 @@ begin
 			en_mem => mem_en,
 			d_out => color_in,
 			addr => addr_in,
-			reset_ext => reset_h,
-			
+			reset_l => reset_l,
+			watch_dog => wdi,
 			d_in => data);
 	
 	vgaModule : vga
@@ -139,10 +152,18 @@ begin
 			addrb => addr_out,
 			doutb => color_out
 		);
+		
+		ledControl : ledModule
+			PORT MAP(
+				clk => d_clk,
+				blink => mem_en,
+				led => led
+			);
 	
 		wr_l <= '1';
 		siwua <= '1';
-			
+		
+		reset_h <= not reset_l;
 
 end Behavioral;
 

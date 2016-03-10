@@ -1,4 +1,5 @@
 vhdl work "ipcore_dir/my2port.vhd"
 vhdl work "vga.vhd"
+vhdl work "ledModule.vhd"
 vhdl work "control.vhd"
 vhdl work "toplvl.vhd"
