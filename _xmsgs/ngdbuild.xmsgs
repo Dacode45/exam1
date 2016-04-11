@@ -5,10 +5,12 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="ConstraintSystem" num="56" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_1 = PERIOD &quot;clk&quot; 16.67 ns HIGH 50 %;&gt; [exam1.ucf(2)]</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TNM&apos; or &apos;TimeGrp&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">clk</arg>&apos;.
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">clk_in</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_1</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_SP</arg> instance <arg fmt="%s" index="5">clkControl/dcm_sp_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_SP</arg> output(s): 
+<arg fmt="%s" index="7">CLKFX</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clkControl_clkfx = PERIOD &quot;clkControl_clkfx&quot; TS_1 / 0.416666667 HIGH 50%&gt;</arg>
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="56" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_2 = PERIOD &quot;vgaclk&quot; 40 ns HIGH 50 %;&gt; [exam1.ucf(9)]</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TNM&apos; or &apos;TimeGrp&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">vgaclk</arg>&apos;.
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">clk_in</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_1</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_SP</arg> instance <arg fmt="%s" index="5">clkControl/dcm_sp_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_SP</arg> output(s): 
+<arg fmt="%s" index="7">CLK0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clkControl_clk0 = PERIOD &quot;clkControl_clk0&quot; TS_1 HIGH 50%&gt;</arg>
 </msg>
 
 </messages>

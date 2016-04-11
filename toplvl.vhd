@@ -3,8 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity toplvl is
 	PORT(
-		d_clk	: IN STD_LOGIC;
-		v_clk : IN STD_LOGIC;
+		clk_in : IN STD_LOGIC;
 		
 		--control
 		reset_l : IN STD_LOGIC;
@@ -38,6 +37,16 @@ end toplvl;
 
 architecture Behavioral of toplvl is
 
+component mydcm
+port
+ (-- Clock in ports
+  CLK_IN1           : in     std_logic;
+  -- Clock out ports
+  CLK_OUT1          : out    std_logic;
+  CLK_OUT2          : out    std_logic
+ );
+end component;
+
 --Memory
 COMPONENT my2port
   PORT (
@@ -69,9 +78,11 @@ COMPONENT control
 		txe_l : IN STD_LOGIC;
 		oe_l : OUT STD_LOGIC;
 		rd_l : OUT STD_LOGIC;
+		wr_l : OUT STD_LOGIC;
+		siwua : OUT STD_LOGIC;
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
 		en_mem : OUT STD_LOGIC_VECTOR(0 downto 0);
-		d_in : IN STD_LOGIC_VECTOR(7 downto 0);
+		d : INOUT STD_LOGIC_VECTOR(7 downto 0);
 		reset_l : IN STD_LOGIC;
 		d_out : OUT STD_LOGIC_VECTOR(8 downto 0);
 		watch_dog : OUT STD_LOGIC
@@ -108,6 +119,9 @@ SIGNAL reset_h : STD_LOGIC;
 SIGNAL addr_in : STD_LOGIC_VECTOR(15 downto 0);
 SIGNAL addr_out : STD_LOGIC_VECTOR(15 downto 0);
 
+SIGNAL d_clk	: STD_LOGIC;
+SIGNAL v_clk : STD_LOGIC;
+		
 begin
 
 	controlModule : control
@@ -117,12 +131,14 @@ begin
 			txe_l => txe_l,
 			oe_l => oe_l,
 			rd_l => rd_l,
+			wr_l => wr_l,
+			siwua => siwua,
 			en_mem => mem_en,
 			d_out => color_in,
 			addr => addr_in,
 			reset_l => reset_l,
 			watch_dog => wdi,
-			d_in => data);
+			d => data);
 	
 	vgaModule : vga
 		PORT MAP(
@@ -140,6 +156,14 @@ begin
 			b0 => b0,
 			b1 => b1,
 			b2 => b2);
+			
+	clkControl : mydcm
+		port map
+   (-- Clock in ports
+    CLK_IN1 => clk_in,
+    -- Clock out ports
+    CLK_OUT1 => d_clk,
+    CLK_OUT2 => v_clk);
 			
 	memory : my2port
 		PORT MAP(
@@ -160,9 +184,6 @@ begin
 				led => led
 			);
 	
-		wr_l <= '1';
-		siwua <= '1';
-		
 		reset_h <= not reset_l;
 
 end Behavioral;

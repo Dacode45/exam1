@@ -14,9 +14,11 @@ entity control is
 		txe_l : IN STD_LOGIC;
 		oe_l : OUT STD_LOGIC;
 		rd_l : OUT STD_LOGIC;
+		wr_l : OUT STD_LOGIC;
+		siwua : OUT STD_LOGIC;
 		addr : OUT STD_LOGIC_VECTOR(15 downto 0);
 		en_mem : OUT STD_LOGIC_VECTOR(0 downto 0);
-		d_in : IN STD_LOGIC_VECTOR(7 downto 0);
+		d : INOUT STD_LOGIC_VECTOR(7 downto 0);
 		reset_l : IN STD_LOGIC;
 		d_out : OUT STD_LOGIC_VECTOR(8 downto 0);
 		watch_dog : OUT STD_LOGIC
@@ -24,133 +26,116 @@ entity control is
 end control;
 
 architecture Behavioral of control is
-	TYPE states IS (s0, s1, s2, s3, s4, s5, s6, s7);
+	TYPE states IS (s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
 	
 	SIGNAL state: states := s0;
 	SIGNAL nxt_state : states := s0;
 	
 	--Internal Signals
 	--Resgister
-	SIGNAL en_lower : STD_LOGIC := '0';
-	SIGNAL d_lower : STD_LOGIC_VECTOR(7 downto 0):= (others => '0');
-	SIGNAL en_upper : STD_LOGIC := '0';
-	SIGNAL d_upper : STD_LOGIC_VECTOR(7 downto 0):= (others => '0');
+	SIGNAL d_int : STD_LOGIC_VECTOR(7 downto 0) := "ZZZZZZZZ"; --internal register 
+	SIGNAL en_o : STD_LOGIC := '0'; -- enable data output
+	SIGNAL en_i : STD_LOGIC := '0'; -- enable data input
 	
-	SIGNAL concat : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
+	SIGNAL tmp_en_o : STD_LOGIC := '0'; -- enable data output prep
+	SIGNAL tmp_en_i : STD_LOGIC := '0'; -- enable data input
+	SIGNAL tmp_rd_l : STD_LOGIC := '1'; -- register for rd
+	SIGNAL tmp_oe_l : STD_LOGIC := '1'; -- register for oe
+	SIGNAL tmp_wr_l : STD_LOGIC := '1'; -- register for wr
+	SIGNAL tmp_siwua : STD_LOGIC := '1'; -- register for siwua
+	SIGNAL tmp_d : STD_LOGIC_VECTOR(7 downto 0) := "ZZZZZZZZ"; --internal register 
 	
-	SIGNAL crap : STD_LOGIC := '0'; -- all ones
-	SIGNAL byte_counter : STD_LOGIC := '0'; --what byte are you on
-	SIGNAL nxt_byte_counter : STD_LOGIC := '0'; --what byte are you on
-	SIGNAL mem_set : STD_LOGIC := '0'; --memory should be set the next tick
-	SIGNAL mem_full : STD_LOGIC := '0';
-
 	--Register
 	SIGNAL addr_counter : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 	SIGNAL watch_dog_int : STD_LOGIC := '0';
+	SIGNAL watch_dog_counter: STD_LOGIC_VECTOR(2 downto 0) := (others => '0');
 begin
 
-
-	clkd : PROCESS(clk)
+	--Handle register transfers.
+	clkd : PROCESS (clk)
 	BEGIN
-		--Handle state transition
+		--Handle states
 		if (rising_edge(clk)) then
-			if(reset_l = '0' or crap='1') then
+			if(reset_l = '0') then
 				state <= s0;
-			else
+			else 
 				state <= nxt_state;
 			end if;
-			
-			if(state = s0 or state = s1 or state = s2 or state = s3 or state = s4 or state = s5 or state = s6 or state = s7) then
-				watch_dog_int <= not watch_dog_int;
-			else
-				watch_dog_int <= '1';
+		--Write Data
+			if en_i = '1' then
+				d_int <= d;
 			end if;
+			
+			
+		--Watchdog
+		if(state = s0 or state = s1 or state = s2 or state = s3 or state = s4 or state = s5 or state = s6 or state = s7) then
+				watch_dog_int <= watch_dog_counter(2);
+			else
+				watch_dog_int <= '0';
+			end if;
+			
+			watch_dog_counter <= watch_dog_counter + 1;
+		
+		d <= tmp_d;
+	
+	if(en_o = '0') then
+			tmp_d <= d_int;
+		else
+			tmp_d <= d_int;
 		end if;
+		
+		end if;
+		
+		
 	END PROCESS clkd;
 	
-	addr_gen : PROCESS(clk)
+	--Handle state transitions
+	state_trans: PROCESS(reset_l, rxf_l, txe_l, state)
 	BEGIN
-		if (rising_edge(clk)) then
-				if (state = s0) then
-					addr_counter <= (others => '0');
-				elsif (state = s7) then
-					if mem_full = '0' then
-						addr_counter <= addr_counter + 1;
-					else
-						addr_counter <= addr_counter;
-					end if;
-				else
-					addr_counter <= addr_counter;
-				end if;
-		end if;
-	END PROCESS addr_gen;
-	
-	data_in : PROCESS(clk)
-	BEGIN
-		-- Handle register writes
-		if (rising_edge(clk)) then
-		
-			if crap = '1' then
-				d_lower <= (others => '0');
-				d_upper <= (others => '0');
-			else
-				
-					if(en_lower = '1') then
-						d_lower <= d_in; 
-					end if;
-			
-					if(en_upper = '1') then
-						d_upper <= d_lower;
-					end if;
-				
-			end if;
-		end if;
-				
-	END PROCESS data_in;
-	
-	
-	state_trans: PROCESS(rxf_l, state)
-	BEGIN
-			nxt_state <= state;
-			CASE state IS
-				when s0 => 	nxt_state <= s1;
-								
-				when s1 => if rxf_l = '1' then
-									nxt_state <= s1;
-								else 
-									nxt_state <= s2;
-								end if;
-				when s2 => nxt_state <= s3;
-				when s3 => nxt_state <= s4;
-				when s4 => if rxf_l = '1' then
-									nxt_state <= s4;
-								else 
-									nxt_state <= s5;
-								end if;
-				when s5 => nxt_state <= s6;
-				when s6 => nxt_state <= s7;
-				when s7 => nxt_state <= s1;
-			END CASE;
+		--set defaut 
+		nxt_state <= state;
+		CASE state IS
+			WHEN s0 => if (rxf_l = '1') then
+							nxt_state <= s0;
+						else
+						nxt_state <= s1;
+						end if;
+			WHEN s1 => nxt_state <= s2;
+			WHEN S2 => nxt_state <= s3;
+			WHEN s3 => nxt_state <= s4;
+			WHEN s4 => if(txe_l = '1') then
+						nxt_state <= s4;
+						else
+						nxt_state <= s5;
+						end if;
+			WHEN s5 => nxt_state <= s6;
+			WHEN s6 => nxt_state <= s7;
+			WHEN s7 => nxt_state <= s8;
+			WHEN s8 => nxt_state <= s9;
+			WHEN s9 => nxt_state <= s10;
+			WHEN s10 => nxt_state <= s0;
+		END CASE;
 	END PROCESS state_trans;
 	
+	--Handle CL to Register transfers
+	output: PROCESS(clk)
+	BEGIN
 	
-	oe_l <= '0' when ( state = s2 or state = s3 or state = s5 or state = s6 ) else '1';
-	rd_l <= '0' when ( state = s3 or state = s6) else '1';
+		if(rising_edge(clk)) then
+			rd_l <= tmp_rd_l;
+			oe_l <= tmp_oe_l;
+			wr_l <= tmp_wr_l;
+			siwua <= tmp_siwua;
+		end if;
+		
+	END PROCESS output;
 	
-	en_lower <= '1' when ( state = s3 or state = s6) else '0';
-	en_upper <= '1' when (state = s6 ) else '0';
-
-	
-	en_mem <= (others => '1') when (state = s7 and (mem_full = '0')) else (others => '0');
-	addr <= addr_counter;
-	
-	mem_full <= '1' when (addr_counter = 65535 ) else '0';
-	crap <= '1' when not (d_upper & d_lower) = 0 else '0';
-	--Can't do for some reason d_out <= (d_upper & d_lower)(8 downto 0);
-	concat <= (d_upper & d_lower);
-	d_out <= concat(8 downto 0);
-	
-	watch_dog <= watch_dog_int;
-	
+	--State transitions
+	tmp_rd_l <= '0' when(state = s2 or state = s3) else '1';
+	tmp_oe_l <= '0' when(state = s1 or state = s2 or state = s3) else '1';
+	tmp_wr_l <= '0' when(state = s6) else '1';
+	tmp_siwua <= '0' when(state = s8) else '1';
+	en_i <= '1' when(state = s1 or state = s2) else '0';
+	en_o <= '1' when(state = s5 or state = s6) else '0';
 end Behavioral;
 

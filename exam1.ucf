@@ -1,14 +1,12 @@
-NET "d_clk" TNM_NET = "d_clk";
-TIMESPEC TS_1 = PERIOD "clk" 16.67 ns HIGH 50 %;
+NET "clk_in" TNM_NET = "clk_in";
+TIMESPEC TS_1 = PERIOD "clk_in" 16.666 ns HIGH 50 %;
 
-OFFSET = OUT 5.667 ns AFTER "d_clk";
+OFFSET = OUT 5.667 ns AFTER "clk_in";
 
-OFFSET = IN 9 ns VALID 9.5 ns BEFORE "d_clk";
+OFFSET = IN 9 ns VALID 9.5 ns BEFORE "clk_in";
 
 NET "v_clk" TNM_NET = "v_clk";
-TIMESPEC TS_2 = PERIOD "vgaclk" 40 ns HIGH 50 %;
-
-# PlanAhead Generated physical constraints 
+TIMESPEC TS_2 = PERIOD "v_clk" 40 ns HIGH 50 %;
 
 CONFIG PROHIBIT = P65;
 CONFIG PROHIBIT = P39;
@@ -20,12 +18,10 @@ CONFIG PROHIBIT = P38;
 CONFIG PROHIBIT = P69;
 NET "txe_l" LOC = P102;
 NET "wr_l" LOC = P101;
-NET "reset_h" LOC = P78;
-NET "d_clk" LOC = P79;
-NET "siwua" LOC = P81;
-NET "rd_l" LOC = P83;
-NET "rxf_l" LOC = P97;
-NET "oe_l" LOC = P98;
+NET "siwua" LOC = P80;
+NET "rd_l" LOC = P98;
+NET "rxf_l" LOC = P99;
+NET "oe_l" LOC = P100;
 NET "data[7]" LOC = P142;
 NET "data[6]" LOC = P141;
 NET "data[5]" LOC = P138;
@@ -34,65 +30,101 @@ NET "data[3]" LOC = P121;
 NET "data[2]" LOC = P118;
 NET "data[1]" LOC = P117;
 NET "data[0]" LOC = P116;
-
-# PlanAhead Generated IO constraints 
-
-NET "v_clk" IOSTANDARD = LVCMOS25;
+NET "v_sync" LOC = P35;
+NET "h_sync" LOC = P33;
+NET "b0" LOC = P6;
+NET "b1" LOC = P5;
+NET "b2" LOC = P2;
+NET "g0" LOC = P9;
+NET "g1" LOC = P8;
+NET "g2" LOC = P7;
+NET "r0" LOC = P12;
+NET "r1" LOC = P11;
+NET "r2" LOC = P10;
 NET "data[7]" IOSTANDARD = LVCMOS33;
+NET "data[7]" DRIVE = 12;
+NET "data[7]" SLEW = SLOW;
 NET "data[6]" IOSTANDARD = LVCMOS33;
+NET "data[6]" DRIVE = 12;
+NET "data[6]" SLEW = SLOW;
 NET "data[5]" IOSTANDARD = LVCMOS33;
+NET "data[5]" DRIVE = 12;
+NET "data[5]" SLEW = SLOW;
 NET "data[4]" IOSTANDARD = LVCMOS33;
+NET "data[4]" DRIVE = 12;
+NET "data[4]" SLEW = SLOW;
 NET "data[3]" IOSTANDARD = LVCMOS33;
+NET "data[3]" DRIVE = 12;
+NET "data[3]" SLEW = SLOW;
 NET "data[2]" IOSTANDARD = LVCMOS33;
+NET "data[2]" DRIVE = 12;
+NET "data[2]" SLEW = SLOW;
 NET "data[1]" IOSTANDARD = LVCMOS33;
+NET "data[1]" DRIVE = 12;
+NET "data[1]" SLEW = SLOW;
 NET "data[0]" IOSTANDARD = LVCMOS33;
-NET "txe_l" IOSTANDARD = LVCMOS33;
-NET "wr_l" IOSTANDARD = LVCMOS33;
-NET "oe_l" IOSTANDARD = LVCMOS33;
+NET "data[0]" DRIVE = 12;
+NET "data[0]" SLEW = SLOW;
+NET "clk_in" IOSTANDARD = LVCMOS25;
+NET "clk_in" IBUF_LOW_PWR = "TRUE";
+NET "reset_l" IOSTANDARD = LVCMOS25;
 NET "rxf_l" IOSTANDARD = LVCMOS33;
+NET "txe_l" IOSTANDARD = LVCMOS33;
+NET "oe_l" IOSTANDARD = LVCMOS33;
+NET "oe_l" DRIVE = 12;
+NET "oe_l" SLEW = SLOW;
 NET "rd_l" IOSTANDARD = LVCMOS33;
+NET "rd_l" DRIVE = 12;
+NET "rd_l" SLEW = SLOW;
+NET "wr_l" IOSTANDARD = LVCMOS33;
+NET "wr_l" DRIVE = 12;
+NET "wr_l" SLEW = SLOW;
 NET "siwua" IOSTANDARD = LVCMOS33;
-NET "d_clk" IOSTANDARD = LVCMOS33;
-NET "reset_h" IOSTANDARD = LVCMOS33;
-NET "v_sync" IOSTANDARD = LVCMOS33;
+NET "siwua" DRIVE = 12;
+NET "siwua" SLEW = SLOW;
+NET "wdi" IOSTANDARD = LVCMOS33;
+NET "wdi" DRIVE = 12;
+NET "wdi" SLEW = SLOW;
 NET "h_sync" IOSTANDARD = LVCMOS33;
-NET "led" IOSTANDARD = LVCMOS33;
-NET "b0" IOSTANDARD = LVCMOS33;
-NET "b1" IOSTANDARD = LVCMOS33;
-NET "b2" IOSTANDARD = LVCMOS33;
-NET "g0" IOSTANDARD = LVCMOS33;
-NET "g1" IOSTANDARD = LVCMOS33;
-NET "g2" IOSTANDARD = LVCMOS33;
+NET "h_sync" DRIVE = 12;
+NET "h_sync" SLEW = SLOW;
+NET "v_sync" IOSTANDARD = LVCMOS33;
+NET "v_sync" DRIVE = 12;
+NET "v_sync" SLEW = SLOW;
 NET "r0" IOSTANDARD = LVCMOS33;
+NET "r0" DRIVE = 12;
+NET "r0" SLEW = SLOW;
 NET "r1" IOSTANDARD = LVCMOS33;
+NET "r1" DRIVE = 12;
+NET "r1" SLEW = SLOW;
 NET "r2" IOSTANDARD = LVCMOS33;
+NET "r2" DRIVE = 12;
+NET "r2" SLEW = SLOW;
+NET "g0" IOSTANDARD = LVCMOS33;
+NET "g0" DRIVE = 12;
+NET "g0" SLEW = SLOW;
+NET "g1" IOSTANDARD = LVCMOS33;
+NET "g1" DRIVE = 12;
+NET "g1" SLEW = SLOW;
+NET "g2" IOSTANDARD = LVCMOS33;
+NET "g2" DRIVE = 12;
+NET "g2" SLEW = SLOW;
+NET "b0" IOSTANDARD = LVCMOS33;
+NET "b0" DRIVE = 12;
+NET "b0" SLEW = SLOW;
+NET "b1" IOSTANDARD = LVCMOS33;
+NET "b1" DRIVE = 12;
+NET "b1" SLEW = SLOW;
+NET "b2" IOSTANDARD = LVCMOS33;
+NET "b2" DRIVE = 12;
+NET "b2" SLEW = SLOW;
+NET "led" IOSTANDARD = LVCMOS33;
+NET "led" DRIVE = 12;
+NET "led" SLEW = SLOW;
 
 # PlanAhead Generated physical constraints 
 
-NET "v_sync" LOC = P35;
-NET "h_sync" LOC = P33;
-NET "b0" LOC = P29;
-NET "b1" LOC = P27;
-NET "led" LOC = P32;
-NET "b2" LOC = P26;
-NET "g0" LOC = P12;
-NET "g1" LOC = P11;
-NET "g2" LOC = P10;
-NET "r0" LOC = P8;
-NET "r1" LOC = P7;
-NET "r2" LOC = P6;
-
-# PlanAhead Generated SDC timing constraints 
-
-
-# sdc timing constraints are not supported in 'ucf' format. It will not be converted
-#
-#set_switching_activity -toggle_rate 50.000 -type {inputs}
-
-# sdc timing constraints are not supported in 'ucf' format. It will not be converted
-#
-#set_switching_activity -toggle_rate 100.000 -type {outputs}
-
-# sdc timing constraints are not supported in 'ucf' format. It will not be converted
-#
-#set_switching_activity -toggle_rate 50.000 -type {registers}
+CONFIG PROHIBIT = P144;
+NET "wdi" LOC = P83;
+NET "reset_l" LOC = P78;
+NET "clk_in" LOC = P84;

@@ -11,15 +11,15 @@
 			<Port Id="1" Dir="INOUT"/>
 			<Port Id="0" Dir="INOUT"/>
 		</Bus>
-		<Port Id="d_clk" Dir="IN"/>
-		<Port Id="v_clk" Dir="IN"/>
-		<Port Id="reset_h" Dir="IN"/>
+		<Port Id="clk_in" Dir="IN"/>
+		<Port Id="reset_l" Dir="IN"/>
 		<Port Id="rxf_l" Dir="IN"/>
 		<Port Id="txe_l" Dir="IN"/>
 		<Port Id="oe_l" Dir="OUT"/>
 		<Port Id="rd_l" Dir="OUT"/>
 		<Port Id="wr_l" Dir="OUT"/>
 		<Port Id="siwua" Dir="OUT"/>
+		<Port Id="wdi" Dir="OUT"/>
 		<Port Id="h_sync" Dir="OUT"/>
 		<Port Id="v_sync" Dir="OUT"/>
 		<Port Id="r0" Dir="OUT"/>

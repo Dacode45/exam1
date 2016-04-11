@@ -60,6 +60,8 @@ architecture Behavioral of vga is
 	
 	--rgb
 	SIGNAL rgb : STD_LOGIC_VECTOR(8 downto 0) := "000000000";
+	SIGNAL tmp_rgb : STD_LOGIC_VECTOR(8 downto 0) := "000000000";
+	
 	SIGNAL color_en: STD_LOGIC := '0';
 	--sync
 	SIGNAL tmp_h_sync : STD_LOGIC := '1';
@@ -91,15 +93,30 @@ begin
 		
 	END PROCESS clkd;
 	
+	set_output: PROCESS (clk)
+	BEGIN
+		if (rising_edge(clk)) then
+			h_sync <= tmp_h_sync;
+			v_sync <= tmp_v_sync;
+			
+			
+		end if;
+	END PROCESS set_output;
+	
 	---Handle color transfer
 	color : PROCESS (clk)
 	BEGIN
 		if (rising_edge(clk)) then
-			if color_en = '0' then
-				rgb <= "000000000";
-			else 
-				rgb <= data;
-			end if;
+		r0 <= rgb(8);
+			r1 <= rgb(7);
+			r2 <= rgb(6);
+			g0 <= rgb(5);
+			g1 <= rgb(4);
+			g2 <= rgb(3);
+			b0 <= rgb(2);
+			b1 <= rgb(1);
+			b2 <= rgb(0);
+				rgb <= (others => '1');
 		end if;
 	END PROCESS color;
 	
@@ -122,20 +139,8 @@ begin
 	
 	addr <= (v_counter(7 downto 0) + (256-45)) & (h_counter(7 downto 0) + (256-159));
 	--enable this the clock tick before data comes out. h_counter = 159
-	color_en <= '1' WHEN ((159 <= h_counter) and (h_counter < 415) and (44 < v_counter) and (v_counter < 300)) else '0';
+	tmp_rgb <= data WHEN ((159 <= h_counter) and (h_counter < 415) and (44 < v_counter) and (v_counter < 300)) else (others => '0');
 	
-	h_sync <= tmp_h_sync;
-	v_sync <= tmp_v_sync;
-	
-	r0 <= rgb(8);
-	r1 <= rgb(7);
-	r2 <= rgb(6);
-	g0 <= rgb(5);
-	g1 <= rgb(4);
-	g2 <= rgb(3);
-	b0 <= rgb(2);
-	b1 <= rgb(1);
-	b2 <= rgb(0);
 	
 	
 
